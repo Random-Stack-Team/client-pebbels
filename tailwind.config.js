@@ -1,0 +1,31 @@
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        ivory: "#FAF7F2",
+        ink: "#3A3A3A",
+      },
+      fontFamily: {
+        serif: ["EB Garamond", "serif"],
+        sans: ["Inter", "sans-serif"],
+      },
+      spacing: {
+        1: "4px",
+        2: "8px",
+        3: "12px",
+        4: "16px",
+        5: "20px",
+        6: "24px",
+        8: "32px",
+        10: "40px",
+        12: "48px",
+        16: "64px",
+      },
+    },
+  },
+  plugins: [],
+};
