@@ -31,7 +31,7 @@ const rightY = useTransform(
   return (
     <section
       ref={sectionRef}
-      className="relative h-[180vh] bg-background"
+      className="relative z-20 h-[180vh] bg-background"
     >
       {/* Sticky Viewport */}
       <div className="sticky top-0 h-screen overflow-hidden">

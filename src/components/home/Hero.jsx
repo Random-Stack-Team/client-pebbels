@@ -3,7 +3,7 @@ import heroImage from "../../assets/Room 5.jpg"
 
 export default function Hero() {
   return (
-    <section className="min-h-[80vh] flex items-center px-10 lg:px-20 pt-16 pb-12">
+    <section className="relative z-10 min-h-screen flex items-center px-10 lg:px-20 pt-16 pb-12">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Left Content */}
