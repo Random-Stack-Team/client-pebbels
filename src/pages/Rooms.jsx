@@ -1,231 +1,294 @@
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  CarFront,
+  Wifi,
+  BatteryCharging,
+  Droplets,
+  Sofa,
+  ShieldCheck,
+} from "lucide-react";
 
-import { motion } from "framer-motion";
-import roomImage from "../assets/Room 5.jpg";
+
+import heroRoom from "../assets/Rooms/Hero-section-room.jpeg";
+import deluxeRoom from "../assets/Rooms/Deluxe-room.jpeg";
+import executiveRoom from "../assets/Rooms/Executive-room.jpeg";
+import suiteRoom from "../assets/Rooms/Suite-room.jpeg";
+
+import deluxe1 from "../assets/DELUXE/Deluxe room.jpg";
+import deluxe2 from "../assets/DELUXE/Deluxe room (1).jpg";
+import deluxe3 from "../assets/DELUXE/deluxe room (2).jpg";
+
+import executive1 from "../assets/EXECUTIVE/Executive room.jpg";
+import executive2 from "../assets/EXECUTIVE/Executive room (2).jpg";
+
+import suite1 from "../assets/SUITE/Suite room.jpg";
+import suite2 from "../assets/SUITE/Suite room (2).jpg";
+import suite3 from "../assets/SUITE/Suite room (3).jpg";
+
+const rooms = [
+  {
+    title: "Deluxe Room",
+    image: deluxeRoom,
+    images: [deluxe1, deluxe2, deluxe3],
+    desc: "A calm and comfortable room designed for short stays and peaceful rest.",
+    size: "280 sq. ft.",
+    bed: "Queen Bed",
+    guests: "2 Guests",
+  },
+  {
+    title: "Executive Room",
+    image: executiveRoom,
+    images: [executive1, executive2],
+    desc: "A refined space with extra comfort for business travelers and longer visits.",
+    size: "360 sq. ft.",
+    bed: "King Bed",
+    guests: "2 Guests",
+  },
+  {
+    title: "Suite Room",
+    image: suiteRoom,
+    images: [suite1, suite2, suite3],
+    desc: "A spacious premium stay crafted for families, groups, and relaxed living.",
+    size: "520 sq. ft.",
+    bed: "King Bed",
+    guests: "3 Guests",
+  },
+];
 
 export default function Rooms() {
+  const [introDone, setIntroDone] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [selectedFacility, setSelectedFacility] = useState(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIntroDone(true), 2600);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % selectedRoom.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage(
+      (prev) =>
+        (prev - 1 + selectedRoom.images.length) % selectedRoom.images.length
+    );
+  };
+
   return (
-    <main>
-
+    <main className="bg-background text-ink overflow-hidden">
       {/* HERO */}
-      <section className="pt-32 pb-24">
-        <div className="max-w-4xl mx-auto px-8 text-center">
+      <section className="sticky top-0 h-screen overflow-hidden flex items-center bg-ink">
+        <motion.img
+          src={heroRoom}
+          alt="Pebbles Rooms"
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
+        <div className="absolute inset-0 bg-black/45" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full h-full flex flex-col items-center justify-center text-center">
           <motion.p
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-sm uppercase tracking-[0.2em] text-ink"
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-white text-sm uppercase tracking-[0.3em] font-medium"
           >
             Our Rooms
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 55 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.7 }}
-            className="mt-6 font-serif text-5xl md:text-6xl leading-tight text-ink"
+            transition={{ delay: 0.35, duration: 0.9 }}
+            className="mt-6 font-serif text-white text-6xl md:text-8xl leading-[0.95] max-w-4xl"
           >
-            Designed for Rest,
+            Spaces Designed for
             <br />
-            Work, and Longer Stays
+            Quiet Comfort
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 55 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="max-w-lg mx-auto mt-8 text-[15px] leading-7 text-ink"
+            transition={{ delay: 0.5, duration: 0.9 }}
+            className="max-w-2xl mt-8 mx-auto text-white/90 text-[15px] leading-7"
           >
-            Thoughtfully designed accommodations that combine
-            comfort, convenience, and functionality for every
-            type of traveler.
+            Thoughtfully crafted rooms with warm interiors, calm details,
+            and everything needed for a comfortable stay.
           </motion.p>
-
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-xs uppercase tracking-[0.25em]"
+        >
+          Scroll to explore
+        </motion.div>
       </section>
 
-      {/* ROOM TYPES */}
-      <section className="pb-24">
+      {/* ROOM CATEGORIES */}
+      <section className="relative z-20 bg-background rounded-t-[48px] -mt-16 py-28">
         <div className="max-w-6xl mx-auto px-8">
-
-          <div className="grid md:grid-cols-3 gap-10">
-
-            {/* CARD 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-surface"
-            >
-              <img
-                src={roomImage}
-                alt="Deluxe Room"
-                className="w-full h-64 object-cover"
-              />
-
-              <div className="p-8 text-center">
-                <h3 className="font-serif text-3xl text-ink">
-                  Deluxe Room
-                </h3>
-
-                <p className="mt-4 text-[15px] leading-7 text-ink">
-                  Comfortable and practical accommodations
-                  ideal for solo travelers and short stays.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* CARD 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-surface"
-            >
-              <img
-                src={roomImage}
-                alt="Executive Room"
-                className="w-full h-64 object-cover"
-              />
-
-              <div className="p-8 text-center">
-                <h3 className="font-serif text-3xl text-ink">
-                  Executive Room
-                </h3>
-
-                <p className="mt-4 text-[15px] leading-7 text-ink">
-                  Additional space and comfort designed
-                  for business travelers and extended visits.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* CARD 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-surface"
-            >
-              <img
-                src={roomImage}
-                alt="Family Suite"
-                className="w-full h-64 object-cover"
-              />
-
-              <div className="p-8 text-center">
-                <h3 className="font-serif text-3xl text-ink">
-                  Family Suite
-                </h3>
-
-                <p className="mt-4 text-[15px] leading-7 text-ink">
-                  Spacious layouts designed for families,
-                  groups, and longer stays.
-                </p>
-              </div>
-            </motion.div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* SHOWCASE IMAGE */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-8">
-
-          <motion.img
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            src={roomImage}
-            alt="Pebbles Rooms"
-            className="w-full h-[600px] object-cover"
+            className="text-center mb-20"
+          >
+            <p className="text-sm uppercase tracking-[0.25em] font-medium">
+              Room Categories
+            </p>
+
+            <h2 className="mt-5 font-serif text-5xl md:text-6xl">
+              Choose Your Stay
+            </h2>
+          </motion.div>
+
+          <div className="space-y-10">
+            {rooms.map((room, index) => (
+              <motion.div
+                key={room.title}
+                initial={{ opacity: 0, y: 90 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.9 }}
+                className="room-card grid md:grid-cols-[1fr_0.9fr] gap-8 md:gap-14 items-center pt-10 group"
+              >
+                <div className="overflow-hidden h-[300px] md:h-[420px]">
+                  <img
+                    src={room.image}
+                    alt={room.title}
+                    className="mt-10 px-8 py-3 rounded-full border border-ink text-ink hover:bg-ink hover:text-white transition-all duration-500"
+                  />
+                </div>
+
+                <div>
+                  <p className="text-5xl font-serif text-ink/20">
+                    0{index + 1}
+                  </p>
+
+                  <h3 className="mt-3 font-serif text-5xl md:text-6xl leading-none">
+                    {room.title}
+                  </h3>
+
+                  <p className="mt-6 text-[15px] leading-7 max-w-md">
+                    {room.desc}
+                  </p>
+
+                  <div className="flex flex-wrap gap-5 mt-8 text-sm">
+                    <span>{room.size}</span>
+                    <span>{room.bed}</span>
+                    <span>{room.guests}</span>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setSelectedRoom(room);
+                      setCurrentImage(0);
+                    }}
+                    className="mt-10 px-8 py-3 rounded-full bg-ink text-white text-sm font-medium"
+                  >
+                    View Room
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* FACILITIES */}
+<section className="relative z-20 bg-background py-28">
+  <div className="max-w-5xl mx-auto px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      onClick={() => setSelectedFacility({ title, desc })}
+      className="text-center mb-20"
+    >
+      <p className="text-sm uppercase tracking-[0.25em] font-medium">
+        Facilities
+      </p>
+
+      <h2 className="mt-5 font-serif text-5xl md:text-6xl">
+        Affordable Luxury
+      </h2>
+    </motion.div>
+
+    <div className="space-y-8">
+      {[
+  [CarFront, "Covered Car Parking", "Safe and convenient covered parking space for guests."],
+  [Wifi, "24 x 7 Wi-Fi Facility", "High-speed internet access available throughout your stay."],
+  [BatteryCharging, "24 hrs Power Backup Facility including A/C", "Reliable power backup support including air conditioning."],
+  [Droplets, "24 hrs Purified Water Supply", "Clean purified water available around the clock."],
+  [Sofa, "Exquisite Luxury by Interior Decorations", "Elegant interiors designed for a premium stay experience."],
+  [ShieldCheck, "24 x 7 Security Systems", "Round-the-clock security systems for guest safety."],
+].map(([Icon, title, desc], index) => (
+        <motion.div
+          key={title}
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.08, duration: 0.7 }}
+          className="flex items-center gap-6 border-b border-ink/10 pb-7"
+        >
+          <Icon
+            size={34}
+            strokeWidth={1.4}
+            className="text-ink shrink-0"
           />
 
-        </div>
-      </section>
-
-      {/* AMENITIES */}
-      <section className="pb-24">
-        <div className="max-w-5xl mx-auto px-8 text-center">
-
-          <p className="text-sm uppercase tracking-[0.2em] text-ink">
-            Amenities
+          <p className="font-serif text-2xl md:text-3xl leading-tight">
+            {title}
           </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
-          <h2 className="mt-6 font-serif text-5xl leading-tight text-ink">
-            Everything You Need
-          </h2>
+      {/* FULLSCREEN ROOM VIEW */}
+      <AnimatePresence>
+  {selectedFacility && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center px-6"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 40, scale: 0.95 }}
+        className="bg-background text-ink max-w-md w-full rounded-[28px] p-8"
+      >
+        <button
+          onClick={() => setSelectedFacility(null)}
+          className="float-right text-3xl"
+        >
+          ×
+        </button>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16">
+        <h3 className="font-serif text-4xl mt-8">
+          {selectedFacility.title}
+        </h3>
 
-            {[
-              "High-Speed Wi-Fi",
-              "Air Conditioning",
-              "Housekeeping",
-              "Covered Parking",
-              "Smart Television",
-              "24/7 Support",
-            ].map((item) => (
-              <div
-                key={item}
-                className="py-6 border border-border"
-              >
-                <p className="text-[15px] text-ink">
-                  {item}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="pb-32">
-        <div className="max-w-3xl mx-auto px-8 text-center">
-
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="font-serif text-5xl leading-tight text-ink"
-          >
-            Experience a Comfortable Stay
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.7 }}
-            className="max-w-lg mx-auto mt-6 text-[15px] leading-7 text-ink"
-          >
-            Explore thoughtfully designed rooms and
-            modern amenities created for comfort,
-            convenience, and peace of mind.
-          </motion.p>
-
-          <motion.button
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="mt-10 px-8 py-3 bg-ink text-background text-sm font-medium"
-          >
-            Book Your Stay
-          </motion.button>
-
-        </div>
-      </section>
-
+        <p className="mt-5 text-[15px] leading-7 text-ink/70">
+          {selectedFacility.desc}
+        </p>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </main>
   );
 }
-
