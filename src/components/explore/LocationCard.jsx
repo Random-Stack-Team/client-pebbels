@@ -22,11 +22,17 @@ export default function LocationCard({
   className="
     group
     relative
-    h-[320px]
+    h-[260px]
+sm:h-[300px]
+md:h-[320px]
     overflow-hidden
 
-    rounded-t-[160px]
-    rounded-b-[32px]
+    rounded-t-[120px]
+sm:rounded-t-[140px]
+md:rounded-t-[160px]
+
+rounded-b-[24px]
+md:rounded-b-[32px]
 
     bg-[#F3EFE7]
 
@@ -42,76 +48,94 @@ export default function LocationCard({
 <div
   className="
     absolute
-    top-10
+    top-6
+md:top-10
     left-1/2
     -translate-x-1/2
     z-20
 
-    px-4
-    py-2
+    px-3
+md:px-4
+    py-1.5
+md:py-2
 
     rounded-full
    bg-[#3A3A3A]
     text-[#FAF7F2]
     backdrop-blur-md
 
-    text-[11px]
+    text-[10px]
+md:text-[11px]
     uppercase
     tracking-[0.15em]
   "
 >
   {distance}
 </div>
+<img
+  src={image}
+  alt={title}
+  className="
+    absolute
+    inset-0
+    w-full
+    h-full
+    object-cover
 
-      {/* Image */}
-      <img
-        src={image}
-        alt={title}
-        className="
-          absolute
-          inset-0
-          w-full
-          h-full
-          object-cover
-          scale-110
-          opacity-0
-          transition-all
-          duration-700
-          group-hover:scale-100
-          group-hover:opacity-100
-        "
-      />
+    scale-100
+    opacity-100
+
+    md:scale-110
+    md:opacity-0
+
+    transition-all
+    duration-700
+
+    group-hover:md:scale-100
+    group-hover:md:opacity-100
+  "
+/>
 
       {/* Dark Overlay */}
       <div
-        className="
-          absolute
-          inset-0
-          bg-black/45
-          opacity-0
-          transition-opacity
-          duration-700
-          group-hover:opacity-100
-        "
-      />
+  className="
+    absolute
+    inset-0
+
+    bg-black/45
+    opacity-100
+
+    md:opacity-0
+
+    transition-opacity
+    duration-700
+
+    group-hover:md:opacity-100
+  "
+/>
 
       {/* Default Content */}
       <div
-        className="
-          absolute
-          inset-0
-          flex
-          items-center
-          justify-center
-          transition-all
-          duration-500
-          group-hover:opacity-0
-        "
-      >
+  className="
+    absolute
+    inset-0
+    flex
+    items-center
+    justify-center
+
+    hidden md:flex
+
+    transition-all
+    duration-500
+
+    group-hover:opacity-0
+  "
+>
         <h3
           className="
             font-serif
-            text-4xl
+            text-3xl
+sm:text-4xl
             text-[#3A3A3A]
           "
         >
@@ -121,23 +145,27 @@ export default function LocationCard({
 
       {/* Hover Content */}
       <div
-        className="
-          absolute
-          inset-x-0
-          bottom-0
-          p-8
+  className="
+    absolute
+    inset-x-0
+    bottom-0
 
-          translate-y-8
-          opacity-0
+    p-5
+    md:p-8
 
-          transition-all
-          duration-500
+    transition-all
+    duration-500
 
-          group-hover:translate-y-0
-          group-hover:opacity-100
-        "
-      >
-        <p
+    translate-y-0
+    opacity-100
+
+    md:translate-y-8
+    md:opacity-0
+
+    group-hover:md:translate-y-0
+    group-hover:md:opacity-100
+  "
+>        <p
           className="
             text-xs
             uppercase
@@ -152,7 +180,8 @@ export default function LocationCard({
           className="
             mt-3
             font-serif
-            text-3xl
+            text-2xl
+md:text-3xl
             text-white
           "
         >
@@ -162,8 +191,11 @@ export default function LocationCard({
         <p
           className="
             mt-3
-            text-sm
-            leading-6
+            text-[13px]
+md:text-sm
+
+leading-5
+md:leading-6
             text-white/80
           "
         >

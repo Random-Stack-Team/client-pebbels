@@ -7,6 +7,8 @@ export default function Navbar() {
   const location = useLocation();
   const isRoomsPage = location.pathname === "/rooms";
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const [showNav, setShowNav] = useState(true);
 
   useEffect(() => {
@@ -37,11 +39,12 @@ export default function Navbar() {
   const underlineColor = isRoomsPage ? "bg-white" : "bg-ink";
 
   return (
+    <>
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{
-        opacity: showNav ? 1 : 0,
-        y: showNav ? 0 : -100,
+        opacity: showNav || mobileMenuOpen ? 1 : 0,
+y: showNav || mobileMenuOpen ? 0 : -100,
       }}
       transition={{
         duration: 0.35,
@@ -54,7 +57,7 @@ export default function Navbar() {
         flex
         items-center
         justify-between
-        px-8
+        px-5 md:px-8
         py-3
         ${
           isRoomsPage
@@ -67,13 +70,20 @@ export default function Navbar() {
       <img
         src={logo}
         alt="Pebbles"
-        className="h-12 w-auto"
+        className="h-10 md:h-12 w-auto"
       />
 
       {/* Links */}
       <div
-        className={`flex items-center gap-8 text-sm font-medium ${textColor}`}
-      >
+  className={`
+    hidden md:flex
+    items-center
+    gap-8
+    text-sm
+    font-medium
+    ${textColor}
+  `}
+>
         {[
           ["Home", "/"],
           ["Rooms", "/rooms"],
@@ -97,9 +107,8 @@ export default function Navbar() {
 
       {/* CTA */}
       <motion.button
-  whileHover={{ scale: 1.03 }}
-  whileTap={{ scale: 0.97 }}
   className="
+    hidden md:block
     px-6
     py-3
     rounded-xl
@@ -112,6 +121,83 @@ export default function Navbar() {
 >
   Book Now
 </motion.button>
+
+<button
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  className={`
+    md:hidden
+    flex
+    flex-col
+    gap-1.5
+    ${textColor}
+  `}
+>
+  <span className="w-6 h-[2px] bg-current" />
+  <span className="w-6 h-[2px] bg-current" />
+  <span className="w-6 h-[2px] bg-current" />
+</button>
+
     </motion.nav>
+
+{mobileMenuOpen && (
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0 }}
+    className="
+      fixed
+      top-[72px]
+      left-0
+      w-full
+      z-40
+
+      bg-[#FAF7F2]
+      border-b
+      border-black/[0.05]
+
+      md:hidden
+    "
+  >
+    <div className="flex flex-col p-6">
+
+      {[
+        ["Home", "/"],
+        ["Rooms", "/rooms"],
+        ["Design", "/design"],
+        ["Explore", "/explore"],
+        ["About", "/about"],
+        ["Contact", "/contact"],
+      ].map(([name, path]) => (
+        <Link
+          key={name}
+          to={path}
+          onClick={() => setMobileMenuOpen(false)}
+          className="
+            py-4
+            text-[#3A3A3A]
+            border-b
+            border-black/[0.05]
+          "
+        >
+          {name}
+        </Link>
+      ))}
+
+      <button
+        className="
+          mt-6
+          py-3
+          rounded-xl
+          bg-[#3A3A3A]
+          text-[#FAF7F2]
+        "
+      >
+        Book Now
+      </button>
+
+    </div>
+  </motion.div>
+)}
+</>
   );
 }

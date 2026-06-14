@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import experienceImage from "../../assets/Firefly.webp";
+import experienceImage from "../../assets/Firefly.png";
 
 export default function Experience() {
   return (
@@ -10,13 +10,13 @@ export default function Experience() {
     z-20
     bg-[#3A3A3A]
     text-[#FAF7F2]
-    pt-24
-    pb-32
+    pt-20 md:pt-24
+pb-24 md:pb-32
   "
 >
 
 
-    <div className="max-w-5xl mx-auto px-8 text-center">
+    <div className="max-w-5xl mx-auto px-6 md:px-8 text-center">
 
 
 
@@ -35,7 +35,7 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ delay: 0.1, duration: 0.9,ease: [0.22, 1, 0.36, 1], }}
-          className="mt-6 font-serif text-5xl md:text-6xl leading-tight text-white/95"
+          className="mt-6 font-serif text-3xl sm:text-4xl md:text-6xl leading-tight text-white/95"
         >
           Designed for Comfort,
           <br />
@@ -47,8 +47,16 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ delay: 0.2, duration: 0.7,ease: [0.22, 1, 0.36, 1], }}
-          className="max-w-lg mx-auto mt-8 text-[15px] leading-7 text-center text-white/80"
-        >
+          className="
+  max-w-md md:max-w-lg
+  mx-auto
+  mt-8
+  px-2 md:px-0
+  text-[15px]
+  leading-7
+  text-center
+  text-white/80
+">
           Situated in one of Chennai's most accessible
           neighborhoods, Pebbles combines the convenience
           of city living with the warmth of personalized
@@ -73,7 +81,13 @@ export default function Experience() {
           <img
             src={experienceImage}
             alt="Pebbles Experience"
-            className="w-full h-[650px] object-cover"
+            className="
+  w-full
+  h-[280px]
+  sm:h-[400px]
+  md:h-[650px]
+  object-cover
+"
           />
         </motion.div>
 

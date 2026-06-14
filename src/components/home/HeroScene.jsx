@@ -22,7 +22,7 @@ export default function HeroScene() {
   const heroImageY = useTransform(
   scrollYProgress,
   [0, 0.7],
-  [0, -350]
+  [0, -220]
 );
 
 
@@ -81,9 +81,9 @@ const heroOpacity = useTransform(
 
   return (
     <section
-      ref={sectionRef}
-      className="relative h-[320vh]"
-    >
+  ref={sectionRef}
+  className="relative h-[280vh] md:h-[320vh]"
+>
       <div className="sticky top-0 h-screen overflow-hidden">
 
   {/* HERO */}
@@ -128,12 +128,13 @@ const heroOpacity = useTransform(
     y: heroImageY,
   }}
   className="
-    absolute
-    inset-0
-    w-full
-    h-full
-    object-cover
-  "
+  absolute
+  inset-0
+  w-full
+  h-full
+  object-cover
+  object-center
+"
 />
 
     {/* Premium Overlay */}
@@ -171,8 +172,7 @@ const heroOpacity = useTransform(
           mt-6
           font-serif
           text-white
-          text-6xl
-          md:text-8xl
+          text-4xl sm:text-5xl md:text-8xl
           leading-[0.9]
         "
       >
@@ -186,8 +186,9 @@ const heroOpacity = useTransform(
           mt-8
           max-w-2xl
           text-white/80
-          text-lg
-          leading-8
+          text-base md:text-lg
+leading-7 md:leading-8
+px-6 md:px-0
         "
       >
         Experience comfort, care, and thoughtfully
@@ -197,8 +198,8 @@ const heroOpacity = useTransform(
       <button
         className="
           mt-10
-          px-8
-          py-4
+          px-6 md:px-8
+py-3 md:py-4
           rounded-xl
 
           bg-[#FAF7F2]
@@ -237,8 +238,16 @@ const heroOpacity = useTransform(
       shadow-[0_-60px_120px_rgba(0,0,0,0.08)]
     "
   >
-          <div className="max-w-7xl mx-auto px-10 lg:px-16 h-full grid lg:grid-cols-[220px_1fr_220px] gap-16 items-center">
-
+          <div className="
+  max-w-7xl
+  mx-auto
+  px-6 md:px-10 lg:px-16
+  h-full
+  grid
+  lg:grid-cols-[220px_1fr_220px]
+  gap-16
+  items-center
+">
             {/* LEFT RAIL */}
             <motion.div
               style={{ y: leftY }}
@@ -258,19 +267,22 @@ const heroOpacity = useTransform(
             </motion.div>
 
             {/* CENTER CONTENT */}
-            <div className="max-w-3xl mx-auto px-8 text-center">
+            <div className="max-w-3xl
+mx-auto
+px-4 md:px-8
+text-center">
 
               <p className="text-sm uppercase tracking-[0.2em] text-ink">
                 Welcome to Pebbles
               </p>
 
-              <h2 className="mt-6 font-serif text-5xl md:text-6xl leading-tight text-ink">
+              <h2 className="mt-6 font-serif text-3xl sm:text-4xl md:text-6xl leading-tight text-ink">
                 A Stay Designed Around
                 <br />
                 Comfort and Care
               </h2>
 
-              <div className="max-w-lg mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
+              <div className="max-w-md md:max-w-lg mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
 
                 <p>
                   Dear Valued Guest,

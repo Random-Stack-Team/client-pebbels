@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import room1 from "../../assets/Room 5.jpg";
-import room2 from "../../assets/Room 5.jpg";
-import room3 from "../../assets/Room 5.jpg";
+import room1 from "../../assets/Room 5.webp";
+import room2 from "../../assets/Room 5.webp";
+import room3 from "../../assets/Room 5.webp";
 
 export default function RoomsPreview() {
   const rooms = [
@@ -28,8 +28,8 @@ export default function RoomsPreview() {
   ];
 
   return (
-    <section className="bg-background py-28">
-      <div className="max-w-7xl mx-auto px-10 lg:px-16">
+    <section className="bg-background py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
 
         {/* Section Header */}
         <div className="text-center">
@@ -49,7 +49,15 @@ export default function RoomsPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.7 }}
-            className="mt-6 font-serif text-5xl md:text-6xl leading-tight text-ink"
+            className="
+  mt-6
+  font-serif
+  text-4xl
+  md:text-5xl
+  lg:text-6xl
+  leading-tight
+  text-ink
+"
           >
             Spaces Designed
             <br />
@@ -72,7 +80,7 @@ export default function RoomsPreview() {
         </div>
 
         {/* Rooms Grid */}
-        <div className="grid lg:grid-cols-3 gap-12 mt-20">
+        <div className="grid lg:grid-cols-3 gap-10 md:gap-12 mt-16 md:mt-20">
 
           {rooms.map((room, index) => (
             <motion.div
@@ -92,12 +100,28 @@ export default function RoomsPreview() {
                 <img
                   src={room.image}
                   alt={room.title}
-                  className="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="
+  w-full
+  h-[280px]
+  md:h-[380px]
+  lg:h-[460px]
+  object-cover
+  transition-transform
+  duration-700
+  group-hover:scale-105
+"
                 />
 
               </div>
 
-              <h3 className="mt-8 font-serif text-3xl text-ink">
+              <h3 className="
+  mt-6
+  md:mt-8
+  font-serif
+  text-2xl
+  md:text-3xl
+  text-ink
+">
                 {room.title}
               </h3>
 
