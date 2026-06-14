@@ -12,26 +12,58 @@ import welcome4 from "../../assets/Room 5.jpg";
 export default function HeroScene() {
   const sectionRef = useRef(null);
 
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
 
+//Hero image Parallax
+  const heroImageY = useTransform(
+  scrollYProgress,
+  [0, 0.7],
+  [0, -350]
+);
+
+
+const revealScale = useTransform(
+  scrollYProgress,
+  [0, 0.25],
+  [1.08, 1]
+);
+
+const heroScale = useTransform(
+  scrollYProgress,
+  [0, 0.7],
+  [1.25, 1]
+);
+
+
+const heroContentY = useTransform(
+  scrollYProgress,
+  [0, 0.7],
+  [0, -100]
+);
+
+const heroOverlay = useTransform(
+  scrollYProgress,
+  [0, 0.7],
+  [0.15, 0.55]
+);
+
   // Welcome panel rises over Hero
   const welcomeY = useTransform(
   scrollYProgress,
-  [0, 0.15, 0.25, 0.35],
+  [0.10, 0.30, 0.45, 0.60],
   ["100%", "40%", "10%", "0%"]
 );
 
 
 const heroOpacity = useTransform(
   scrollYProgress,
-  [0.12, 0.24, 0.35],
-  [1, 0.7, 0]
+  [0.65, 0.8, 0.95],
+  [1, 0.8, 0]
 );
-
-
   
   // Rails start AFTER Welcome takeover
   const leftY = useTransform(
@@ -45,6 +77,7 @@ const heroOpacity = useTransform(
     [0.22, 1],
     [1050, -300]
   );
+
 
   return (
     <section
@@ -60,35 +93,68 @@ const heroOpacity = useTransform(
     }}
     className="absolute inset-0 z-0"
   >
+
+  <motion.div
+  initial={{ height: "100%" }}
+  animate={{ height: "0%" }}
+  transition={{
+    duration: 1.8,
+    ease: [0.83, 0, 0.17, 1],
+  }}
+  className="
+    absolute
+    top-0
+    left-0
+    w-full
+    bg-[#FAF7F2]
+    z-[50]
+    origin-top
+  "
+/>
+
     {/* HERO IMAGE */}
-    <img
-      src={heroImage}
-      alt="Pebbles Chennai"
-      className="
-        absolute
-        inset-0
-        w-full
-        h-full
-        object-cover
-      "
-    />
+    <motion.img
+  src={heroImage}
+  alt="Pebbles Chennai"
+  animate={{
+    scale: [1.05, 1.12, 1.05],
+  }}
+  transition={{
+    duration: 20,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  style={{
+    y: heroImageY,
+  }}
+  className="
+    absolute
+    inset-0
+    w-full
+    h-full
+    object-cover
+  "
+/>
 
     {/* Premium Overlay */}
-    <div className="absolute inset-0 bg-black/35" />
+    <motion.div
+  style={{ opacity: heroOverlay }}
+  className="absolute inset-0 bg-black"
+/>
 
     {/* Hero Content */}
-    <div
-      className="
-        absolute
-        inset-0
-        flex
-        flex-col
-        items-center
-        justify-center
-        text-center
-        px-6
-      "
-    >
+    <motion.div
+  style={{ y: heroContentY }}
+  className="
+    absolute
+    inset-0
+    flex
+    flex-col
+    items-center
+    justify-center
+    text-center
+  "
+>
       <p
         className="
           text-white/80
@@ -149,7 +215,7 @@ const heroOpacity = useTransform(
       >
         Book Your Stay
       </button>
-    </div>
+    </motion.div>
   </motion.div>
 
   {/* WELCOME PANEL */}

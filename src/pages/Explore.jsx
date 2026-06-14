@@ -1,8 +1,19 @@
 import { motion } from "framer-motion";
 
-import exploreImage from "../assets/Room 5.jpg";
+import exploreImage from "../assets/EXPLORE/explore.jpg";
+import LocationCard from "../components/explore/LocationCard";
+
+import tnagarImage from "../assets/EXPLORE/tnagar.jpg";
+import pondyImage from "../assets/EXPLORE/pondybazaar.jpg";
+import expressImage from "../assets/EXPLORE/ea.jpg";
+import nungambakkamImage from "../assets/EXPLORE/nungambakkam.jpg";
+import annaSalaiImage from "../assets/EXPLORE/annasalai.jpg";
+import kodambakkamImage from "../assets/EXPLORE/kodambakkam.jpg";
 
 export default function Explore() {
+
+
+
   return (
     <main>
 
@@ -46,101 +57,86 @@ export default function Explore() {
       </section>
 
       {/* SHOPPING */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-8">
+      <section className="pb-32">
+  <div className="max-w-7xl mx-auto px-8">
 
-          <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-[0.2em] text-ink">
-              Shopping & Lifestyle
-            </p>
+    <div className="text-center mb-20">
+      <p className="text-sm uppercase tracking-[0.2em] text-ink">
+        Shopping & Lifestyle
+      </p>
 
-            <h2 className="mt-6 font-serif text-5xl text-ink">
-              Discover Chennai
-            </h2>
-          </div>
+      <h2 className="mt-6 font-serif text-5xl text-ink">
+        Discover Chennai
+      </h2>
+    </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+    <div className="grid md:grid-cols-3 gap-8">
 
-            <div className="bg-surface p-10 text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                T. Nagar
-              </h3>
+      <LocationCard
+  title="T. Nagar"
+  image={tnagarImage}
+  distance="8 min Away"
+  description="Chennai's most iconic shopping destination known for luxury jewelry, fashion boutiques, and vibrant city life."
+  delay={0}
+/>
 
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                Chennai's most popular shopping district,
-                known for fashion, jewelry, and vibrant streets.
-              </p>
-            </div>
+<LocationCard
+  title="Pondy Bazaar"
+  image={pondyImage}
+  distance="6 min Away"
+  description="A lively mix of retail stores, street shopping, cafés, and local experiences in the heart of Chennai."
+  delay={0.15}
+/>
 
-            <div className="bg-surface p-10 text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Pondy Bazaar
-              </h3>
+<LocationCard
+  title="Express Avenue"
+  image={expressImage}
+  distance="12 min Away"
+  description="One of Chennai's premier lifestyle destinations offering shopping, dining, entertainment, and luxury brands."
+  delay={0.3}
+/>
 
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                A lively destination offering shopping,
-                dining, and local experiences.
-              </p>
-            </div>
+    </div>
 
-            <div className="bg-surface p-10 text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Express Avenue
-              </h3>
-
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                One of Chennai's premier malls with
-                shopping, entertainment, and dining.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* BUSINESS */}
       <section className="pb-24">
         <div className="max-w-6xl mx-auto px-8">
 
-          <div className="grid md:grid-cols-3 gap-10">
 
-            <div className="border border-border p-10 text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Nungambakkam
-              </h3>
 
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                A key commercial and business district
-                close to Pebbles.
-              </p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-8">
 
-            <div className="border border-border p-10 text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Anna Salai
-              </h3>
+  <LocationCard
+  title="Nungambakkam"
+  image={nungambakkamImage}
+  distance="5 min Away"
+  description="A vibrant commercial hub featuring corporate offices, premium restaurants, retail destinations, and business centers."
+  delay={0}
+/>
 
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                One of Chennai's most important
-                business and transportation corridors.
-              </p>
-            </div>
+<LocationCard
+  title="Anna Salai"
+  image={annaSalaiImage}
+  distance="10 min Away"
+  description="One of Chennai's most important business corridors connecting major offices, hotels, and city landmarks."
+  delay={0.15}
+/>
 
-            <div className="border border-border p-10 text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Kodambakkam
-              </h3>
+<LocationCard
+  title="Kodambakkam"
+  image={kodambakkamImage}
+  distance="7 min Away"
+  description="A well-connected neighborhood with offices, transport links, healthcare facilities, and everyday conveniences."
+  delay={0.3}
+/>
 
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                Convenient access to offices,
-                transport, and city services.
-              </p>
-            </div>
-
-          </div>
+</div>
 
         </div>
+       
       </section>
 
       {/* FEATURE IMAGE */}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import experienceImage from "../../assets/Room 5.jpg";
+import experienceImage from "../../assets/Firefly.webp";
 
 export default function Experience() {
   return (
