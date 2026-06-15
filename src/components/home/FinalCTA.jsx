@@ -52,37 +52,48 @@ const titleY = useTransform(
 // CONTENT REVEALS
 const contentOpacity = useTransform(
   scrollYProgress,
-  [0.55, 0.85],
+  [0.45, 0.72],
   [0, 1]
 );
 
 const contentY = useTransform(
   scrollYProgress,
-  [0.55, 0.85],
+  [0.45, 0.72],
   [80, 0]
 );
   return (
     <section
-      ref={sectionRef}
-      className="relative h-[180vh] bg-background"
-    >
+  ref={sectionRef}
+  className="
+    relative
+    h-[160vh]
+    md:h-[220vh]
+    lg:h-[240vh]
+    bg-background
+  "
+>
       <div className="sticky top-0 h-screen flex items-center justify-center">
 
         <div
   className="
-    relative
-    w-full
-    max-w-6xl
-    h-[700px]
+  relative
+  w-full
+  md:w-[92%]
+  max-w-6xl
 
-    overflow-hidden
-    rounded-[32px]
+  h-[500px]
+  md:h-[620px]
+  lg:h-[700px]
 
-    border
-    border-black/[0.04]
+  overflow-hidden
+  rounded-[24px]
+  md:rounded-[32px]
 
-    shadow-[0_25px_60px_rgba(0,0,0,0.08)]
-  "
+  border
+  border-black/[0.04]
+
+  shadow-[0_25px_60px_rgba(0,0,0,0.08)]
+"
 >
 
           {/* IMAGE */}
@@ -121,11 +132,15 @@ const contentY = useTransform(
               y: titleY,
             }}
             className="
-              absolute
-              left-12
-              bottom-12
-              z-20
-            "
+  absolute
+  left-6
+  md:left-12
+
+  bottom-6
+  md:bottom-12
+
+  z-20
+"
           >
             <p className="text-sm uppercase tracking-[0.2em] text-white/80">
               Discover Chennai
@@ -135,8 +150,9 @@ const contentY = useTransform(
               className="
                 mt-4
                 font-serif
-                text-5xl
-                md:text-7xl
+                text-3xl
+md:text-5xl
+lg:text-7xl
                 leading-[0.9]
                 text-white
               "
@@ -163,7 +179,7 @@ const contentY = useTransform(
               items-center
               justify-center
 
-              px-10
+              px-5 md:px-10
               text-center
             "
           >
@@ -173,13 +189,14 @@ const contentY = useTransform(
 
             <h2
               className="
-                mt-6
-                font-serif
-                text-5xl
-                md:text-7xl
-                leading-[0.95]
-                text-white
-              "
+  mt-6
+  font-serif
+  text-3xl
+  md:text-5xl
+  lg:text-7xl
+  leading-[0.95]
+  text-white
+"
             >
               With Comfort
               <br />
@@ -188,7 +205,8 @@ const contentY = useTransform(
 
             <p
               className="
-                max-w-2xl
+                max-w-md
+md:max-w-2xl
                 mt-8
                 text-[15px]
                 leading-7
@@ -206,8 +224,8 @@ const contentY = useTransform(
               whileTap={{ scale: 0.98 }}
               className="
                 mt-10
-                px-8
-                py-4
+                px-6 md:px-8
+py-3 md:py-4
 
                 border
                 border-white/20

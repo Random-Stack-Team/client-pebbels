@@ -7,7 +7,7 @@ export default function LocationCard({
   description,
   delay = 0,
 }) {
-    console.log(title, distance);
+    
 
   return (
     <motion.div
@@ -85,14 +85,14 @@ md:text-[11px]
     scale-100
     opacity-100
 
-    md:scale-110
-    md:opacity-0
+    lg:scale-110
+lg:opacity-0
 
     transition-all
     duration-700
 
-    group-hover:md:scale-100
-    group-hover:md:opacity-100
+    group-hover:lg:scale-100
+group-hover:lg:opacity-100
   "
 />
 
@@ -105,12 +105,12 @@ md:text-[11px]
     bg-black/45
     opacity-100
 
-    md:opacity-0
+    lg:opacity-0
 
     transition-opacity
     duration-700
 
-    group-hover:md:opacity-100
+    group-hover:lg:opacity-100
   "
 />
 
@@ -123,7 +123,7 @@ md:text-[11px]
     items-center
     justify-center
 
-    hidden md:flex
+    hidden lg:flex
 
     transition-all
     duration-500
@@ -134,8 +134,8 @@ md:text-[11px]
         <h3
           className="
             font-serif
-            text-3xl
-sm:text-4xl
+            text-4xl
+sm:text-5xl
             text-[#3A3A3A]
           "
         >
@@ -159,11 +159,11 @@ sm:text-4xl
     translate-y-0
     opacity-100
 
-    md:translate-y-8
-    md:opacity-0
+    lg:translate-y-8
+    lg:opacity-0
 
-    group-hover:md:translate-y-0
-    group-hover:md:opacity-100
+    group-hover:lg:translate-y-0
+    group-hover:lg:opacity-100
   "
 >        <p
           className="

@@ -76,7 +76,7 @@ y: showNav || mobileMenuOpen ? 0 : -100,
       {/* Links */}
       <div
   className={`
-    hidden md:flex
+    hidden lg:flex
     items-center
     gap-8
     text-sm
@@ -108,7 +108,7 @@ y: showNav || mobileMenuOpen ? 0 : -100,
       {/* CTA */}
       <motion.button
   className="
-    hidden md:block
+    hidden lg:block
     px-6
     py-3
     rounded-xl
@@ -125,7 +125,7 @@ y: showNav || mobileMenuOpen ? 0 : -100,
 <button
   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
   className={`
-    md:hidden
+    lg:hidden
     flex
     flex-col
     gap-1.5
@@ -155,7 +155,7 @@ y: showNav || mobileMenuOpen ? 0 : -100,
       border-b
       border-black/[0.05]
 
-      md:hidden
+      lg:hidden
     "
   >
     <div className="flex flex-col p-6">

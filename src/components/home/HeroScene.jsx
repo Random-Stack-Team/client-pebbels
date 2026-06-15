@@ -82,7 +82,12 @@ const heroOpacity = useTransform(
   return (
     <section
   ref={sectionRef}
-  className="relative h-[280vh] md:h-[320vh]"
+  className="
+    relative
+    h-[180vh]
+    md:h-[220vh]
+    lg:h-[320vh]
+  "
 >
       <div className="sticky top-0 h-screen overflow-hidden">
 
@@ -172,7 +177,7 @@ const heroOpacity = useTransform(
           mt-6
           font-serif
           text-white
-          text-4xl sm:text-5xl md:text-8xl
+          text-4xl sm:text-5xl md:text-6xl lg:text-8xl
           leading-[0.9]
         "
       >
@@ -267,7 +272,7 @@ py-3 md:py-4
             </motion.div>
 
             {/* CENTER CONTENT */}
-            <div className="max-w-3xl
+            <div className="max-w-4xl lg:max-w-3xl
 mx-auto
 px-4 md:px-8
 text-center">
@@ -282,7 +287,7 @@ text-center">
                 Comfort and Care
               </h2>
 
-              <div className="max-w-md md:max-w-lg mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
+              <div className="max-w-md md:max-w-2xl lg:max-w-lg mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
 
                 <p>
                   Dear Valued Guest,

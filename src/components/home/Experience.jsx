@@ -85,7 +85,8 @@ pb-24 md:pb-32
   w-full
   h-[280px]
   sm:h-[400px]
-  md:h-[650px]
+  md:h-[500px]
+  lg:h-[650px]
   object-cover
 "
           />
