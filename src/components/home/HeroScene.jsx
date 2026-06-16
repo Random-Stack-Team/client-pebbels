@@ -9,6 +9,8 @@ import welcome2 from "../../assets/Room 5.jpg";
 import welcome3 from "../../assets/Room 5.jpg";
 import welcome4 from "../../assets/Room 5.jpg";
 
+
+
 export default function HeroScene() {
   const sectionRef = useRef(null);
 
@@ -67,16 +69,16 @@ const heroOpacity = useTransform(
   
   // Rails start AFTER Welcome takeover
   const leftY = useTransform(
-    scrollYProgress,
-    [0.22, 1],
-    [850, -200]
-  );
+  scrollYProgress,
+  [0.25, 1],
+  [350, -150]
+);
 
-  const rightY = useTransform(
-    scrollYProgress,
-    [0.22, 1],
-    [1050, -300]
-  );
+const rightY = useTransform(
+  scrollYProgress,
+  [0.25, 1],
+  [450, -250]
+);
 
 
   return (
@@ -254,22 +256,30 @@ py-3 md:py-4
   items-center
 ">
             {/* LEFT RAIL */}
-            <motion.div
-              style={{ y: leftY }}
-              className="hidden lg:flex flex-col gap-40"
-            >
-              <img
-                src={welcome1}
-                alt=""
-                className="w-full h-72 object-cover"
-              />
+            
+              <motion.div
+  style={{ y: leftY }}
+  className="hidden lg:flex flex-col gap-40"
+>
+  <div className="overflow-hidden h-72">
+    <img
+      src={welcome1}
+      alt=""
+      className="w-full h-[150%] object-cover
+      scale-[1.08]"
+      
+    />
+  </div>
 
-              <img
-                src={welcome2}
-                alt=""
-                className="w-full h-72 object-cover mt-24"
-              />
-            </motion.div>
+  <div className="overflow-hidden h-72 mt-24">
+    <img
+      src={welcome2}
+      alt=""
+      className="w-full h-[150%] object-cover
+      scale-[1.08]"
+    />
+  </div>
+</motion.div>
 
             {/* CENTER CONTENT */}
             <div className="max-w-4xl lg:max-w-3xl
@@ -325,22 +335,37 @@ text-center">
             </div>
 
             {/* RIGHT RAIL */}
-            <motion.div
-              style={{ y: rightY }}
-              className="hidden lg:flex flex-col gap-40"
-            >
-              <img
-                src={welcome3}
-                alt=""
-                className="w-full h-72 object-cover mt-24"
-              />
+            {/* RIGHT RAIL */}
+<motion.div
+  style={{ y: rightY }}
+  className="hidden lg:flex flex-col gap-40"
+>
+  <div className="overflow-hidden h-72 mt-24">
+    <img
+      src={welcome3}
+      alt=""
+      className="
+        w-full
+        h-[150%]
+        object-cover
+        scale-[1.08]
+      "
+    />
+  </div>
 
-              <img
-                src={welcome4}
-                alt=""
-                className="w-full h-72 object-cover"
-              />
-            </motion.div>
+  <div className="overflow-hidden h-72">
+    <img
+      src={welcome4}
+      alt=""
+      className="
+        w-full
+        h-[150%]
+        object-cover
+        scale-[1.08]
+      "
+    />
+  </div>
+</motion.div>
 
           </div>
         </motion.div>
