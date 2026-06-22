@@ -5,10 +5,11 @@ import Layout from "./components/layout/Layout";
 
 import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
-import Design from "./pages/Design";
-import Explore from "./pages/Explore";
-import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Explore from "./pages/Explore";
+import Reviews from "./pages/Reviews";
+import Contact from "./pages/Contact";
+
 
 export default function App() {
   return (
@@ -19,10 +20,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
-        <Route path="/design" element={<Design />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/contact" element={<Contact />} />
+        
       </Routes>
     </Layout>
   );
