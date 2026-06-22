@@ -1,50 +1,56 @@
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
+import logoWhite from "../../assets/logo-white.png";
 
 export default function Navbar() {
   const location = useLocation();
-  const isRoomsPage = location.pathname === "/rooms";
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [showNav, setShowNav] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isHeroTop, setIsHeroTop] = useState(true);
+
+  const transparentPages = ["/", "/rooms"];
+  const isImageHeroPage = transparentPages.includes(location.pathname);
+  const isTransparentNavbar = isImageHeroPage && isHeroTop;
 
   useEffect(() => {
-    let lastScroll = window.scrollY;
+  let lastScroll = window.scrollY;
 
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
+  const handleScroll = () => {
+    const currentScroll = window.scrollY;
 
-      if (currentScroll < 50) {
-        setShowNav(true);
-      } else if (currentScroll < lastScroll) {
-        setShowNav(true);
-      } else {
-        setShowNav(false);
-      }
+    setIsHeroTop(currentScroll < window.innerHeight * 0.9);
 
-      lastScroll = currentScroll;
-    };
+    if (currentScroll < 50) {
+      setShowNav(true);
+    } else if (currentScroll < lastScroll) {
+      setShowNav(true);
+    } else {
+      setShowNav(false);
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    lastScroll = currentScroll;
+  };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
 
-  const textColor = isRoomsPage ? "text-white" : "text-ink";
-  const underlineColor = isRoomsPage ? "bg-white" : "bg-ink";
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+  const textColor = isTransparentNavbar ? "text-white" : "text-ink";
+const underlineColor = isTransparentNavbar ? "bg-white" : "bg-ink";
 
   return (
     <>
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{
-        opacity: showNav || mobileMenuOpen ? 1 : 0,
-y: showNav || mobileMenuOpen ? 0 : -100,
+        opacity: showNav || mobileOpen ? 1 : 0,
+y: showNav || mobileOpen ? 0 : -100,
       }}
       transition={{
         duration: 0.35,
@@ -60,38 +66,38 @@ y: showNav || mobileMenuOpen ? 0 : -100,
         px-5 md:px-8
         py-3
         ${
-          isRoomsPage
-            ? "bg-transparent"
-            : "bg-[#FAF7F2]/95 backdrop-blur-sm border-b border-black/[0.04]"
+          isTransparentNavbar
+  ? "bg-transparent"
+  : "bg-[#FAF7F2]/95 backdrop-blur-sm border-b border-black/[0.04]"
         }
       `}
     >
       {/* Logo */}
       <img
-        src={logo}
-        alt="Pebbles"
-        className="h-10 md:h-12 w-auto"
-      />
+  src={isTransparentNavbar ? logoWhite : logo}
+  alt="Pebbles"
+  className="h-12 w-auto object-contain"
+  style={{
+    transform: isTransparentNavbar
+      ? "translateX(18px) scale(1.6)"
+      : "translateX(0) scale(1)"
+  }}
+/>
 
       {/* Links */}
       <div
-  className={`
-    hidden lg:flex
-    items-center
-    gap-8
-    text-sm
-    font-medium
-    ${textColor}
-  `}
+  className={`hidden lg:flex items-center gap-8 text-[18px] font-light ${textColor}`}
+  style={{ fontFamily: "'Cormorant Garamond', serif" }}
 >
-        {[
-          ["Home", "/"],
-          ["Rooms", "/rooms"],
-          ["Design", "/design"],
-          ["Explore", "/explore"],
-          ["About", "/about"],
-          ["Contact", "/contact"],
-        ].map(([name, path]) => (
+
+      {[
+  ["Home", "/"],
+  ["Story", "/about"],
+  ["Residences", "/rooms"],
+  ["Discover", "/explore"],
+  ["Guest Voices", "/reviews"],
+  ["Reach Us", "/contact"],
+].map(([name, path]) => (
           <Link
             key={name}
             to={path}
@@ -123,80 +129,70 @@ y: showNav || mobileMenuOpen ? 0 : -100,
 </motion.button>
 
 <button
-  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-  className={`
-    lg:hidden
-    flex
-    flex-col
-    gap-1.5
-    ${textColor}
-  `}
+  onClick={() => setMobileOpen(!mobileOpen)}
+  className={`lg:hidden ${textColor}`}
 >
-  <span className="w-6 h-[2px] bg-current" />
-  <span className="w-6 h-[2px] bg-current" />
-  <span className="w-6 h-[2px] bg-current" />
+  {mobileOpen ? (
+    <X size={28} />
+  ) : (
+    <Menu size={28} />
+  )}
 </button>
 
     </motion.nav>
 
-{mobileMenuOpen && (
+{mobileOpen && (
   <motion.div
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0 }}
     className="
-      fixed
-      top-[72px]
-      left-0
-      w-full
-      z-40
-
-      bg-[#FAF7F2]
-      border-b
-      border-black/[0.05]
-
-      lg:hidden
-    "
+fixed
+top-[60px]
+left-0
+w-full
+z-40
+bg-[#FAF7F2]
+border-b
+border-black/[0.05]
+lg:hidden
+"
   >
-    <div className="flex flex-col p-6">
+    <div className="flex flex-col px-6 py-4 gap-4">
 
       {[
-        ["Home", "/"],
-        ["Rooms", "/rooms"],
-        ["Design", "/design"],
-        ["Explore", "/explore"],
-        ["About", "/about"],
-        ["Contact", "/contact"],
-      ].map(([name, path]) => (
+  ["Home", "/"],
+  ["Story", "/about"],
+  ["Residences", "/rooms"],
+  ["Discover", "/explore"],
+  ["Guest Voices", "/reviews"],
+  ["Reach Us", "/contact"],
+].map(([name, path]) => (
         <Link
-          key={name}
-          to={path}
-          onClick={() => setMobileMenuOpen(false)}
-          className="
-            py-4
-            text-[#3A3A3A]
-            border-b
-            border-black/[0.05]
-          "
-        >
-          {name}
-        </Link>
+  key={name}
+  to={path}
+  onClick={() => setMobileMenuOpen(false)}
+  className="py-2 text-[#3A3A3A] text-3xl"
+  style={{
+    fontFamily: "'Bodoni Moda', serif",
+    fontSize: "20px",
+fontWeight: 300,
+letterSpacing: "0.01em"
+  }}
+>
+  {name}
+</Link>
       ))}
 
       <button
-        className="
-          mt-6
-          py-3
-          rounded-xl
-          bg-[#3A3A3A]
-          text-[#FAF7F2]
-        "
+        className="hidden lg:block px-6 py-3 rounded-xl bg-[#3A3A3A] text-[#FAF7F2] text-sm transition-all duration-300"
       >
         Book Now
       </button>
 
     </div>
   </motion.div>
+  
 )}
 </>
   );

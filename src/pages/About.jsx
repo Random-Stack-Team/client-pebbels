@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import aboutImage from "../assets/Reception.png";
-//import locationMap from "../assets/Reception.png";
+import logo from "../assets/logo.png";
+import ourStory from "../assets/hero.png";
+
 
 export default function About() {
   return (
     <main>
-
+      
       {/* HERO */}
 <section className="min-h-screen flex items-center pt-32 pb-24">
-  <div className="max-w-7xl mx-auto px-8">
+  <div className="max-w-7xl mx-auto px-8 w-full">
 
     <motion.p
       initial={{ opacity: 0, y: 30 }}
@@ -19,51 +22,51 @@ export default function About() {
       About Pebbles
     </motion.p>
 
-    <motion.h1
+    <div className="mt-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+      <motion.h1
+        initial={{ opacity: 0, y: 60, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 0.15, duration: 1 }}
+        className="font-serif text-[64px] md:text-[130px] leading-[0.9] text-ink"
+      >
+        Comfort
+        <br />
+        Convenience
+        <br />
+        Care.
+      </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0, y: 60, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 0.15, duration: 1 }}
+        className="flex items-center justify-center lg:justify-end"
+      >
+        <img
+          src={logo}
+          alt="Pebbles Logo"
+          className="w-[320px] md:w-[500px] lg:w-[560px] object-contain"
+        />
+      </motion.div>
+    </div>
+
+    <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.15, duration: 1 }}
-      className="mt-8 font-serif text-[60px] md:text-[140px] leading-[0.9] text-ink"
+      transition={{ delay: 0.55, duration: 1 }}
+      className="w-full mt-20"
     >
-      Comfort
-      <br />
-      Convenience
-      <br />
-      Care.
-    </motion.h1>
+      <p className="text-sm uppercase tracking-[0.2em] text-ink/50">
+        Introduction
+      </p>
 
-    <motion.h1
-  initial={{
-    opacity: 0,
-    y: 120,
-    textShadow: "0 0 0 rgba(0,0,0,0)"
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-    textShadow: "0 18px 35px rgba(0,0,0,0.12)"
-  }}
-  transition={{
-    duration: 0.9,
-    ease: [0.25, 0.46, 0.45, 0.94]
-  }}
-  className="mt-6 font-serif text-5xl md:text-6xl leading-tight text-ink"
->
-      <div>
-        <p className="text-sm uppercase tracking-[0.2em] text-ink/50">
-          Introduction
-        </p>
-      </div>
-
-      <div>
-        <p className="text-lg md:text-2xl leading-[1.8] text-ink">
-          Pebbles is a thoughtfully designed serviced apartment in Chennai,
-          created for guests who value comfort, privacy, and effortless living.
-          Every stay combines warm hospitality, practical convenience, and
-          modern amenities in a calm and welcoming environment.
-        </p>
-      </div>
-    </motion.h1>
+      <p className="mt-6 max-w-none text-lg md:text-1.5xl leading-[1.6] text-ink">
+        Pebbles is a thoughtfully designed serviced apartment in Chennai,
+        created for guests who value comfort, privacy, and effortless living.
+        Every stay combines warm hospitality, practical convenience, and
+        modern amenities in a calm and welcoming environment.
+      </p>
+    </motion.div>
 
   </div>
 </section>
@@ -71,181 +74,133 @@ export default function About() {
       {/* STORY */}
 <section className="py-32 border-t border-ink/10">
   <div className="max-w-7xl mx-auto px-8">
-
-    <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-20">
-
+    <motion.div
+      initial={{ opacity: 0, y: 70, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{
+        duration: 0.9,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      }}
+      className="grid md:grid-cols-[0.8fr_1.2fr] gap-20"
+    >
       <div>
         <p className="text-sm uppercase tracking-[0.25em] text-ink/50">
           Our Story
         </p>
+
+        <div className="mt-10 overflow-hidden rounded-[32px]">
+          <img
+            src={ourStory}
+            alt="Our Story"
+            className="w-full h-[420px] md:h-[500px] object-cover"
+          />
+        </div>
       </div>
 
       <div>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-serif text-5xl md:text-7xl leading-[1]"
-        >
+        <h2 className="font-serif text-5xl md:text-7xl leading-[1]">
           A Stay That
           <br />
           Feels Effortless
-        </motion.h2>
+        </h2>
 
         <div className="mt-12 space-y-8 text-lg leading-[1.9] max-w-3xl">
-
           <p>
-            Pebbles was established with a simple vision —
-            to provide travelers with the comfort of home
-            combined with the reliability of professional hospitality.
+            Pebbles was established with a simple vision — to provide
+            travelers with the comfort of home combined with the
+            reliability of professional hospitality.
           </p>
 
           <p>
-            Located in Chennai's vibrant T. Nagar district,
-            our serviced apartments offer convenient access
-            to business hubs, shopping destinations,
-            restaurants, and major city attractions.
+            Located in Chennai&apos;s vibrant T. Nagar district, our
+            serviced apartments offer convenient access to business hubs,
+            shopping destinations, restaurants, and major city attractions.
           </p>
 
           <p>
-            Whether your stay is for a few days or several weeks,
-            every space is thoughtfully designed to deliver
-            comfort, privacy, and peace of mind.
+            Whether your stay is for a few days or several weeks, every
+            space is thoughtfully designed to deliver comfort, privacy, and
+            peace of mind.
           </p>
-
         </div>
-
       </div>
-
-    </div>
-
-  </div>
-</section>
-{/* FEATURE IMAGE */}
-<section className="py-20">
-  <div className="max-w-7xl mx-auto px-8">
-
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-      className="overflow-hidden"
-    >
-      <img
-        src={aboutImage}
-        alt="Pebbles"
-        className="w-full h-[80vh] object-cover"
-      />
     </motion.div>
-
   </div>
 </section>
 
-      {/* VALUES */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-8">
-
-          <div className="grid md:grid-cols-3 gap-16 text-center">
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h3 className="font-serif text-3xl text-ink">
-                Comfort
-              </h3>
-
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                Thoughtfully designed rooms and amenities
-                that make every stay relaxing, practical,
-                and enjoyable.
-              </p>
-            </motion.div>
-
-            <motion.div
-  initial={{ opacity: 0, y: 24 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.1, duration: 0.7 }}
->
-  <a
-    href="https://www.google.com/maps/place/Pebbles+Serviced+Apartments/@13.0408884,80.2424119,17z/data=!3m1!4b1!4m9!3m8!1s0x3a52665216c0ca29:0xcb2c91e781c681d1!5m2!4m1!1i2!8m2!3d13.0408884!4d80.2424119!16s%2Fg%2F11bcdls9j8"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block cursor-pointer"
-  >
-  </a>
-</motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-            >
-              <h3 className="font-serif text-3xl text-ink">
-                Hospitality
-              </h3>
-
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                Warm and attentive service dedicated to
-                making every guest feel welcomed and cared for.
-              </p>
-            </motion.div>
-
-          </div>
-
+      {/* FEATURE IMAGE */}
+      <section className="py-5">
+        <div className="max-w-7xl mx-auto px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="overflow-hidden rounded-[32px]"
+          >
+            <img
+              src={aboutImage}
+              alt="Pebbles"
+              className="w-full h-[60vh] md:h-[80vh] object-cover"
+            />
+          </motion.div>
         </div>
       </section>
 
-      {/* LOCATION CARD */}
-<section className="pb-28">
-  <div className="max-w-5xl mx-auto px-8">
-    <a
-      href="https://www.google.com/maps/place/Pebbles+Serviced+Apartments/@13.0408884,80.2424119,17z/data=!3m1!4b1!4m9!3m8!1s0x3a52665216c0ca29:0xcb2c91e781c681d1!5m2!4m1!1i2!8m2!3d13.0408884!4d80.2424119!16s%2Fg%2F11bcdls9j8"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block"
-    >
+      {/* VALUES */}
+<section className="pb-24">
+  <div className="max-w-6xl mx-auto px-8">
+    <div className="grid md:grid-cols-3 gap-8 text-center">
+
+      {/* Comfort */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="relative overflow-hidden rounded-[32px] h-[500px] group"
+        transition={{ duration: 0.7 }}
+        className="text-center"
       >
-        <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.7157571881144!2d80.24236865903762!3d13.041099419089221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52665216c0ca29%3A0xcb2c91e781c681d1!2sPebbles%20Serviced%20Apartments!5e0!3m2!1sen!2sin!4v1781359435938!5m2!1sen!2sin"
-  className="absolute inset-0 w-full h-full"
-  style={{ border: 0 }}
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  title="Pebbles Location"
-/>
+        <h3 className="font-serif text-3xl text-ink">
+          Comfort
+        </h3>
 
-        <div className="relative z-10 h-full flex flex-col justify-end p-10 md:p-14 text-white">
-           
-
-          <div className="mt-10 flex items-center gap-3 ">
-            
-            <span className="group-hover:translate-x-2 transition-transform duration-300">
-              →
-            </span>
-          </div>
-        </div>
+        <p className="mt-4 text-[15px] leading-7 text-ink">
+          Thoughtfully designed rooms and amenities that make every stay
+          relaxing, practical, and enjoyable.
+        </p>
       </motion.div>
-    </a>
+
+      {/* Empty Middle Column */}
+      <div></div>
+
+      {/* Hospitality */}
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.12, duration: 0.7 }}
+        className="text-center"
+      >
+        <h3 className="font-serif text-3xl text-ink">
+          Hospitality
+        </h3>
+
+        <p className="mt-4 text-[15px] leading-7 text-ink">
+          Warm and attentive service dedicated to making every guest feel
+          welcomed and cared for.
+        </p>
+      </motion.div>
+
+    </div>
   </div>
 </section>
+
+      
 
       {/* CTA */}
       <section className="pb-32">
         <div className="max-w-3xl mx-auto px-8 text-center">
-
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -263,23 +218,25 @@ export default function About() {
             transition={{ delay: 0.1, duration: 0.7 }}
             className="max-w-lg mx-auto mt-6 text-[15px] leading-7 text-ink"
           >
-            Discover a stay designed around comfort,
-            convenience, and thoughtful hospitality.
+            Discover a stay designed around comfort, convenience, and thoughtful
+            hospitality.
           </motion.p>
 
-          <motion.button
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="mt-10 px-8 py-3 bg-ink text-white text-sm font-medium"
           >
-            View Rooms
-          </motion.button>
-
+            <Link
+              to="/rooms"
+              className="inline-block mt-10 px-8 py-3 bg-ink text-white text-sm font-medium"
+            >
+              View Rooms
+            </Link>
+          </motion.div>
         </div>
       </section>
-
     </main>
   );
 }
