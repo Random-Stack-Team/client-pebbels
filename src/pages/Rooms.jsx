@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 
+<<<<<<< Updated upstream
 import heroRoom from "../assets/Rooms/Hero-section-room.webp";
 import deluxeRoom from "../assets/Rooms/Deluxe-room.webp";
 import executiveRoom from "../assets/Rooms/Executive-room.webp";
@@ -25,6 +26,23 @@ import executive2 from "../assets/EXECUTIVE/Executive_room_2.webp";
 import suite1 from "../assets/SUITE/Suite_room.webp";
 import suite2 from "../assets/SUITE/Suite_room_2.webp";
 import suite3 from "../assets/SUITE/Suite_room_3.webp";
+=======
+import heroRoom from "../assets/Rooms/Hero-section-room.jpeg";
+import deluxeRoom from "../assets/Rooms/Deluxe-room.jpeg";
+import executiveRoom from "../assets/Rooms/Executive-room.jpeg";
+import suiteRoom from "../assets/Rooms/Suite-room.jpeg";
+
+import deluxe1 from "../assets/DELUXE/Deluxe room.jpg";
+import deluxe2 from "../assets/DELUXE/Deluxe room (1).jpg";
+import deluxe3 from "../assets/DELUXE/deluxe room (2).jpg";
+
+import executive1 from "../assets/EXECUTIVE/Executive room.jpg";
+import executive2 from "../assets/EXECUTIVE/Executive room (2).jpg";
+
+import suite1 from "../assets/SUITE/Suite room.jpg";
+import suite2 from "../assets/SUITE/Suite room (2).jpg";
+import suite3 from "../assets/SUITE/Suite room (3).jpg";
+>>>>>>> Stashed changes
 
 const rooms = [
   {
@@ -93,7 +111,11 @@ export default function Rooms() {
 
         <div className="absolute inset-0 bg-black/45" />
 
+<<<<<<< Updated upstream
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full h-full flex flex-col items-center justify-center text-center">
+=======
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full h-full flex flex-col items-center justify-center text-center">
+>>>>>>> Stashed changes
           <motion.p
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,9 +129,13 @@ export default function Rooms() {
             initial={{ opacity: 0, y: 55 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.9 }}
+<<<<<<< Updated upstream
             className="mt-6 font-serif text-white text-4xl
 md:text-5xl
 lg:text-8xl leading-[0.95] max-w-4xl"
+=======
+            className="mt-6 font-serif text-white text-6xl md:text-8xl leading-[0.95] max-w-4xl"
+>>>>>>> Stashed changes
           >
             Spaces Designed for
             <br />
@@ -120,7 +146,11 @@ lg:text-8xl leading-[0.95] max-w-4xl"
             initial={{ opacity: 0, y: 55 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.9 }}
+<<<<<<< Updated upstream
             className="max-w-md md:max-w-2xl mt-8 mx-auto text-white/90 text-[15px] leading-7"
+=======
+            className="max-w-2xl mt-8 mx-auto text-white/90 text-[15px] leading-7"
+>>>>>>> Stashed changes
           >
             Thoughtfully crafted rooms with warm interiors, calm details,
             and everything needed for a comfortable stay.
@@ -138,8 +168,13 @@ lg:text-8xl leading-[0.95] max-w-4xl"
       </section>
 
       {/* ROOM CATEGORIES */}
+<<<<<<< Updated upstream
       <section className="relative z-20 bg-background rounded-t-[48px] -mt-16 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
+=======
+      <section className="relative z-20 bg-background rounded-t-[48px] -mt-16 py-28">
+        <div className="max-w-6xl mx-auto px-8">
+>>>>>>> Stashed changes
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -150,9 +185,13 @@ lg:text-8xl leading-[0.95] max-w-4xl"
               Room Categories
             </p>
 
+<<<<<<< Updated upstream
             <h2 className="mt-5 font-serif text-3xl
 md:text-5xl
 lg:text-6xl">
+=======
+            <h2 className="mt-5 font-serif text-5xl md:text-6xl">
+>>>>>>> Stashed changes
               Choose Your Stay
             </h2>
           </motion.div>
@@ -165,10 +204,16 @@ lg:text-6xl">
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.9 }}
+<<<<<<< Updated upstream
                 className="room-card grid grid
 lg:grid-cols-[1fr_0.9fr] gap-8 md:gap-14 items-center pt-10 group"
               >
                 <div className="overflow-visible">
+=======
+                className="room-card grid md:grid-cols-[1fr_0.9fr] gap-8 md:gap-14 items-center pt-10 group"
+              >
+                <div className="overflow-hidden h-[300px] md:h-[420px]">
+>>>>>>> Stashed changes
                   <img
                     src={room.image}
                     alt={room.title}
@@ -177,6 +222,7 @@ lg:grid-cols-[1fr_0.9fr] gap-8 md:gap-14 items-center pt-10 group"
                 </div>
 
                 <div>
+<<<<<<< Updated upstream
                   <p className="text-5xl font-serif text-ink/40">
                     0{index + 1}
                   </p>
@@ -185,6 +231,13 @@ lg:grid-cols-[1fr_0.9fr] gap-8 md:gap-14 items-center pt-10 group"
 sm:text-4xl
 md:text-5xl
 lg:text-6xl leading-none">
+=======
+                  <p className="text-5xl font-serif text-ink/20">
+                    0{index + 1}
+                  </p>
+
+                  <h3 className="mt-3 font-serif text-5xl md:text-6xl leading-none">
+>>>>>>> Stashed changes
                     {room.title}
                   </h3>
 
@@ -213,24 +266,38 @@ lg:text-6xl leading-none">
           </div>
         </div>
       </section>
+<<<<<<< Updated upstream
 
       
       {/* FACILITIES */}
 <section className="relative z-20 bg-background py-28">
   <div className="max-w-5xl mx-auto px-5 md:px-8">
+=======
+      {/* FACILITIES */}
+<section className="relative z-20 bg-background py-28">
+  <div className="max-w-5xl mx-auto px-8">
+>>>>>>> Stashed changes
     <motion.div
       initial={{ opacity: 0, y: 35 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+<<<<<<< Updated upstream
+=======
+      onClick={() => setSelectedFacility({ title, desc })}
+>>>>>>> Stashed changes
       className="text-center mb-20"
     >
       <p className="text-sm uppercase tracking-[0.25em] font-medium">
         Facilities
       </p>
 
+<<<<<<< Updated upstream
       <h2 className="mt-5 font-serif text-3xl
 md:text-5xl
 lg:text-6xl">
+=======
+      <h2 className="mt-5 font-serif text-5xl md:text-6xl">
+>>>>>>> Stashed changes
         Affordable Luxury
       </h2>
     </motion.div>
@@ -246,11 +313,15 @@ lg:text-6xl">
 ].map(([Icon, title, desc], index) => (
         <motion.div
           key={title}
+<<<<<<< Updated upstream
           onClick={() => setSelectedFacility({ title, desc })}
+=======
+>>>>>>> Stashed changes
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.08, duration: 0.7 }}
+<<<<<<< Updated upstream
           className="flex
 items-start
 md:items-center
@@ -259,14 +330,24 @@ md:gap-6 border-b border-ink/10 pb-7"
         >
           <Icon
             size={26}
+=======
+          className="flex items-center gap-6 border-b border-ink/10 pb-7"
+        >
+          <Icon
+            size={34}
+>>>>>>> Stashed changes
             strokeWidth={1.4}
             className="text-ink shrink-0"
           />
 
+<<<<<<< Updated upstream
           <p className="font-serif text-lg
 sm:text-xl
 md:text-2xl
 lg:text-3xl leading-tight">
+=======
+          <p className="font-serif text-2xl md:text-3xl leading-tight">
+>>>>>>> Stashed changes
             {title}
           </p>
         </motion.div>
@@ -275,13 +356,20 @@ lg:text-3xl leading-tight">
   </div>
 </section>
 
+<<<<<<< Updated upstream
 {/* ROOM GALLERY MODAL */}
 <AnimatePresence>
   {selectedRoom && (
+=======
+      {/* FULLSCREEN ROOM VIEW */}
+      <AnimatePresence>
+  {selectedFacility && (
+>>>>>>> Stashed changes
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+<<<<<<< Updated upstream
       className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center"
     >
       {/* Close */}
@@ -365,6 +453,24 @@ lg:text-3xl leading-tight">
         </button>
 
         <h3 className="font-serif text-3xl md:text-4xl mt-8">
+=======
+      className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center px-6"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 40, scale: 0.95 }}
+        className="bg-background text-ink max-w-md w-full rounded-[28px] p-8"
+      >
+        <button
+          onClick={() => setSelectedFacility(null)}
+          className="float-right text-3xl"
+        >
+          ×
+        </button>
+
+        <h3 className="font-serif text-4xl mt-8">
+>>>>>>> Stashed changes
           {selectedFacility.title}
         </h3>
 

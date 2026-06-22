@@ -7,8 +7,11 @@ export default function Navbar() {
   const location = useLocation();
   const isRoomsPage = location.pathname === "/rooms";
 
+<<<<<<< Updated upstream
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+=======
+>>>>>>> Stashed changes
   const [showNav, setShowNav] = useState(true);
 
   useEffect(() => {
@@ -43,8 +46,13 @@ export default function Navbar() {
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{
+<<<<<<< Updated upstream
         opacity: showNav || mobileMenuOpen ? 1 : 0,
 y: showNav || mobileMenuOpen ? 0 : -100,
+=======
+        opacity: showNav ? 1 : 0,
+        y: showNav ? 0 : -100,
+>>>>>>> Stashed changes
       }}
       transition={{
         duration: 0.35,
@@ -57,7 +65,11 @@ y: showNav || mobileMenuOpen ? 0 : -100,
         flex
         items-center
         justify-between
+<<<<<<< Updated upstream
         px-5 md:px-8
+=======
+        px-8
+>>>>>>> Stashed changes
         py-3
         ${
           isRoomsPage
@@ -70,11 +82,16 @@ y: showNav || mobileMenuOpen ? 0 : -100,
       <img
         src={logo}
         alt="Pebbles"
+<<<<<<< Updated upstream
         className="h-10 md:h-12 w-auto"
+=======
+        className="h-12 w-auto"
+>>>>>>> Stashed changes
       />
 
       {/* Links */}
       <div
+<<<<<<< Updated upstream
   className={`
     hidden lg:flex
     items-center
@@ -84,6 +101,10 @@ y: showNav || mobileMenuOpen ? 0 : -100,
     ${textColor}
   `}
 >
+=======
+        className={`flex items-center gap-8 text-sm font-medium ${textColor}`}
+      >
+>>>>>>> Stashed changes
         {[
           ["Home", "/"],
           ["Rooms", "/rooms"],
@@ -107,8 +128,14 @@ y: showNav || mobileMenuOpen ? 0 : -100,
 
       {/* CTA */}
       <motion.button
+<<<<<<< Updated upstream
   className="
     hidden lg:block
+=======
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  className="
+>>>>>>> Stashed changes
     px-6
     py-3
     rounded-xl
@@ -121,6 +148,7 @@ y: showNav || mobileMenuOpen ? 0 : -100,
 >
   Book Now
 </motion.button>
+<<<<<<< Updated upstream
 
 <button
   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -199,5 +227,8 @@ y: showNav || mobileMenuOpen ? 0 : -100,
   </motion.div>
 )}
 </>
+=======
+    </motion.nav>
+>>>>>>> Stashed changes
   );
 }
