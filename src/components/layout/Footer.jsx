@@ -6,7 +6,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">  
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
 
           {/* Brand */}
           <div>
@@ -16,7 +16,7 @@ export default function Footer() {
             </h3>
 
             <p
-  className="
+              className="
     mt-4
     text-[14px]
     md:text-[15px]
@@ -24,7 +24,7 @@ export default function Footer() {
     md:leading-7
     max-w-sm
   "
->
+            >
               A thoughtfully designed serviced apartment
               offering comfort, convenience, and warm
               hospitality in Chennai.
@@ -34,7 +34,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-          <h4 className="text-sm uppercase tracking-[0.15em]">
+            <h4 className="text-sm uppercase tracking-[0.15em]">
               Navigation
             </h4>
 
@@ -68,7 +68,7 @@ export default function Footer() {
             </h4>
 
             <div
-  className="
+              className="
     mt-6
     space-y-3
     text-[14px]
@@ -77,7 +77,7 @@ export default function Footer() {
     md:leading-7
     text-white/90
   "
->
+            >
 
               <p>
                 T. Nagar,
@@ -86,7 +86,7 @@ export default function Footer() {
               </p>
 
               <p>
-                +91 XXXXX XXXXX
+                044 4356 0001
               </p>
 
               <p>
@@ -100,7 +100,7 @@ export default function Footer() {
         </div>
 
         <div
-  className="
+          className="
     mt-12 md:mt-20
     pt-8
     border-t
@@ -122,13 +122,13 @@ export default function Footer() {
 
     text-sm
   "
->
+        >
           <p>
             © 2026 Pebbles Serviced Apartments
           </p>
 
           <p>
-            Designed with comfort and care.
+            Crafted By Random Stacks Technologies
           </p>
 
         </div>
@@ -138,4 +138,3 @@ export default function Footer() {
     </footer>
   );
 }
-            
