@@ -97,13 +97,15 @@ export default function Navbar() {
           ))}
         </div>
 
-        <motion.button
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          className="hidden lg:block px-6 py-3 rounded-xl bg-[#3A3A3A] text-[#FAF7F2] text-sm transition-all duration-300"
-        >
-          Book Now
-        </motion.button>
+        <Link to="/book">
+  <motion.button
+    whileHover={{ scale: 1.03 }}
+    whileTap={{ scale: 0.97 }}
+    className="hidden lg:block px-6 py-3 rounded-xl bg-[#3A3A3A] text-[#FAF7F2] text-sm transition-all duration-300"
+  >
+    Book Now
+  </motion.button>
+</Link>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -139,10 +141,24 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              <button className="px-6 py-3 rounded-xl bg-[#3A3A3A] text-[#FAF7F2] text-sm transition-all duration-300">
-                Book Now
-              </button>
-            </div>
+<Link
+  to="/book"
+  onClick={() => setMobileOpen(false)}
+  className="
+    px-6
+    py-3
+    rounded-xl
+    bg-[#3A3A3A]
+    text-[#FAF7F2]
+    text-sm
+    text-center
+  "
+>
+  Book Now
+</Link>
+
+
+   </div>
           </motion.div>
         )}
       </AnimatePresence>

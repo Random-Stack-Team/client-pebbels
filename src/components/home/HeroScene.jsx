@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import roomImage from "../../assets/Room 5.jpg";
 import heroImage from "../../assets/hero2.jpeg";
@@ -200,27 +201,25 @@ px-6 md:px-0
         designed stays in the heart of Chennai.
       </p>
 
-      <button
-        className="
-          mt-10
-          px-6 md:px-8
-py-3 md:py-4
-          rounded-xl
-
-          bg-[#FAF7F2]
-          text-[#3A3A3A]
-
-          text-sm
-          font-medium
-
-          transition-all
-          duration-300
-
-          hover:scale-[1.02]
-        "
-      >
-        Book Your Stay
-      </button>
+      <Link to="/book">
+  <button
+    className="
+      mt-10
+      px-6 md:px-8
+      py-3 md:py-4
+      rounded-xl
+      bg-[#FAF7F2]
+      text-[#3A3A3A]
+      text-sm
+      font-medium
+      transition-all
+      duration-300
+      hover:scale-[1.02]
+    "
+  >
+    Book Your Stay
+  </button>
+</Link>
     </motion.div>
   </motion.div>
 
