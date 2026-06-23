@@ -40,34 +40,123 @@ export default function Contact() {
       </section>
 
       {/* CONTACT INFO */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            {[
-              { title: "Call", text: "+91 XXXXX XXXXX" },
-              { title: "Email", text: "reservations@pebbles.com" },
-              { title: "Visit", text: "T. Nagar, Chennai" },
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.12, duration: 0.7 }}
-                className="rounded-[32px] bg-[#FAF7F2] border border-[#D8CFC2] p-8 shadow-[0_8px_30px_rgba(58,58,58,0.06)]"
-              >
-                <h3 className="font-serif text-3xl text-ink">
-                  {item.title}
-                </h3>
+<section className="pb-24">
+  <div className="max-w-6xl mx-auto px-8">
 
-                <p className="mt-4 text-[15px] leading-7 text-ink">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid lg:grid-cols-[1fr_1fr_1fr] gap-8">
+
+  {/* CALL */}
+  <motion.div
+    className="
+      rounded-[32px]
+      bg-[#F3EFE7]
+      p-8
+
+      border
+      border-black/[0.05]
+
+      min-h-[220px]
+
+      flex
+      flex-col
+      justify-between
+    "
+  >
+    <div>
+      <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
+        Reservations
+      </p>
+
+      <h3 className="mt-4 font-serif text-3xl text-ink">
+        Call Us
+      </h3>
+
+      <p className="mt-3 text-[15px] leading-7 text-ink/70">
+        For bookings and guest assistance.
+      </p>
+    </div>
+
+    <p className="mt-6 text-xl text-ink">
+      044 4356 0001
+    </p>
+  </motion.div>
+
+  {/* EMAIL */}
+  <motion.div
+    className="
+      rounded-[32px]
+      bg-[#F3EFE7]
+      p-8
+
+      border
+      border-black/[0.05]
+
+      min-h-[220px]
+
+      flex
+      flex-col
+      justify-between
+    "
+  >
+    <div>
+      <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
+        Email
+      </p>
+
+      <h3 className="mt-4 font-serif text-3xl text-ink">
+        Write to Us
+      </h3>
+
+      <p className="mt-3 text-[15px] leading-7 text-ink/70">
+        Reservations and stay inquiries.
+      </p>
+    </div>
+
+    <p className="mt-6 text-lg text-ink break-all">
+      info@pebbles.com
+    </p>
+  </motion.div>
+
+  {/* LOCATION */}
+  <motion.div
+    className="
+      rounded-[32px]
+      bg-[#F3EFE7]
+      p-8
+
+      border
+      border-black/[0.05]
+
+      min-h-[220px]
+
+      flex
+      flex-col
+      justify-between
+    "
+  >
+    <div>
+      <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
+        Location
+      </p>
+
+      <h3 className="mt-4 font-serif text-3xl text-ink">
+        Visit Us
+      </h3>
+
+      <p className="mt-3 text-[15px] leading-7 text-ink/70">
+        Conveniently located in Chennai.
+      </p>
+    </div>
+
+    <p className="mt-6 text-lg text-ink">
+      T. Nagar, Chennai
+    </p>
+  </motion.div>
+
+</div>
+
+  </div>
+</section>
 
       {/* LOCATION */}
       <section className="pb-24">

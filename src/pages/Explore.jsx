@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 
 import exploreImage from "../assets/EXPLORE/explore.jpg";
 import LocationCard from "../components/explore/LocationCard";
+import EditorialSection from "../components/explore/EditorialSection";
+
+import marinaImage from "../assets/EXPLORE/marina.webp";
+import templeImage from "../assets/EXPLORE/Kapaleeswarar.jpg";
+import museumImage from "../assets/EXPLORE/museum.jpg";
 
 import tnagarImage from "../assets/EXPLORE/tnagar.jpg";
 import pondyImage from "../assets/EXPLORE/pondybazaar.jpg";
@@ -75,7 +80,7 @@ export default function Explore() {
       <LocationCard
   title="T. Nagar"
   image={tnagarImage}
-  distance="8 min Away"
+  distance="8 min Drive"
   description="Chennai's most iconic shopping destination known for luxury jewelry, fashion boutiques, and vibrant city life."
   delay={0}
 />
@@ -83,7 +88,7 @@ export default function Explore() {
 <LocationCard
   title="Pondy Bazaar"
   image={pondyImage}
-  distance="6 min Away"
+  distance="6 min Drive"
   description="A lively mix of retail stores, street shopping, cafés, and local experiences in the heart of Chennai."
   delay={0.15}
 />
@@ -91,7 +96,7 @@ export default function Explore() {
 <LocationCard
   title="Express Avenue"
   image={expressImage}
-  distance="12 min Away"
+  distance="12 min Drive"
   description="One of Chennai's premier lifestyle destinations offering shopping, dining, entertainment, and luxury brands."
   delay={0.3}
 />
@@ -112,7 +117,7 @@ export default function Explore() {
   <LocationCard
   title="Nungambakkam"
   image={nungambakkamImage}
-  distance="5 min Away"
+  distance="5 min Drive"
   description="A vibrant commercial hub featuring corporate offices, premium restaurants, retail destinations, and business centers."
   delay={0}
 />
@@ -120,7 +125,7 @@ export default function Explore() {
 <LocationCard
   title="Anna Salai"
   image={annaSalaiImage}
-  distance="10 min Away"
+  distance="10 min Drive"
   description="One of Chennai's most important business corridors connecting major offices, hotels, and city landmarks."
   delay={0.15}
 />
@@ -128,7 +133,7 @@ export default function Explore() {
 <LocationCard
   title="Kodambakkam"
   image={kodambakkamImage}
-  distance="7 min Away"
+  distance="7 min Drive"
   description="A well-connected neighborhood with offices, transport links, healthcare facilities, and everyday conveniences."
   delay={0.3}
 />
@@ -156,60 +161,54 @@ export default function Explore() {
         </div>
       </section>
 
-      {/* ATTRACTIONS */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-8">
+     {/* LANDMARKS */}
 
-          <div className="text-center mb-16">
+<div className="pb-24">
 
-            <p className="text-sm uppercase tracking-[0.2em] text-ink">
-              Attractions
-            </p>
+  <div className="text-center mb-20">
+    <p className="text-sm uppercase tracking-[0.2em] text-ink">
+      Attractions
+    </p>
 
-            <h2 className="mt-6 font-serif text-5xl text-ink">
-              Explore Local Landmarks
-            </h2>
+    <h2 className="mt-6 font-serif text-5xl text-ink">
+      Explore Local Landmarks
+    </h2>
+  </div>
 
-          </div>
+  <EditorialSection
+    title="Marina Beach"
+    image={marinaImage}
+    distance="20 min Away"
+    description="One of the world's longest urban beaches offering sunrise walks, local food stalls, and sweeping views of the Bay of Bengal."
+  />
 
-          <div className="grid md:grid-cols-3 gap-10">
+  <div className="max-w-6xl mx-auto px-8">
+  <div className="border-t border-black/[0.06]" />
+</div>
 
-            <div className="text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Marina Beach
-              </h3>
+  <EditorialSection
+    reverse
+    title="Kapaleeshwarar Temple"
+    image={templeImage}
+    distance="15 min Away"
+    description="A centuries-old Dravidian temple known for its colorful gopuram, spiritual significance, and traditional architecture."
+  />
 
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                One of the world's longest urban beaches.
-              </p>
-            </div>
+  <div className="max-w-6xl mx-auto px-8">
+  <div className="border-t border-black/[0.06]" />
+</div>
 
-            <div className="text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Government Museum
-              </h3>
+  <EditorialSection
+    title="Government Museum"
+    image={museumImage}
+    distance="18 min Away"
+    description="One of India's oldest museums featuring archaeological treasures, bronze sculptures, and South Indian history."
+  />
+  <div className="max-w-6xl mx-auto px-8">
+  <div className="border-t border-black/[0.06]" />
+</div>
 
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                A cultural destination featuring history,
-                archaeology, and art collections.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <h3 className="font-serif text-3xl text-ink">
-                Kapaleeshwarar Temple
-              </h3>
-
-              <p className="mt-4 text-[15px] leading-7 text-ink">
-                One of Chennai's most iconic
-                spiritual and architectural landmarks.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+</div>
 
       {/* CLOSING */}
       <section className="pb-32">

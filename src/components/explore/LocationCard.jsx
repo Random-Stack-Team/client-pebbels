@@ -47,25 +47,25 @@ md:rounded-b-[32px]
 
 <div
   className="
+    hidden lg:block
+
     absolute
-    top-6
-md:top-10
+    top-10
     left-1/2
     -translate-x-1/2
     z-20
 
-    px-3
-md:px-4
-    py-1.5
-md:py-2
+    px-4
+    py-2
 
     rounded-full
-   bg-[#3A3A3A]
-    text-[#FAF7F2]
+
+    bg-black/20
     backdrop-blur-md
 
-    text-[10px]
-md:text-[11px]
+    text-white
+
+    text-[11px]
     uppercase
     tracking-[0.15em]
   "
