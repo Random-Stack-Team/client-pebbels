@@ -128,7 +128,7 @@ export default function Footer() {
           </p>
 
           <p>
-            Crafted By Random Stacks Technologies
+            Crafted By Random Stacks Technologies {/* Updated text */}
           </p>
 
         </div>
