@@ -1,4 +1,86 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+function MapBlock() {
+  const [loadMap, setLoadMap] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+  const el = ref.current;
+  if (!el) return;
+
+  const hasLoadedRef = { current: false };
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting && !hasLoadedRef.current) {
+        hasLoadedRef.current = true;
+
+        const load = () => setLoadMap(true);
+
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(load);
+        } else {
+          setTimeout(load, 1500);
+        }
+
+        observer.unobserve(el);
+        observer.disconnect();
+      }
+    },
+    { rootMargin: "200px" }
+  );
+
+  observer.observe(el);
+
+  return () => {
+    observer.unobserve(el);
+    observer.disconnect();
+  };
+}, []);
+
+  return (
+    <div
+      ref={ref}
+      className="relative overflow-hidden rounded-[32px] h-[420px] md:h-[500px] shadow-[0_18px_60px_rgba(58,58,58,0.08)]"
+    >
+      {/* STATIC PREVIEW (NO IMAGE VERSION) */}
+{!loadMap && (
+  <div className="absolute inset-0 bg-[#EAE4DA] flex items-center justify-center">
+    
+    {/* content MUST be above overlay */}
+    <div className="relative z-10 text-center">
+      
+      <div className="w-10 h-10 border-2 border-ink/20 border-t-ink rounded-full animate-spin mx-auto" />
+
+      <p className="mt-4 text-sm text-gray-900 font-medium tracking-wide">
+        Preparing your location
+      </p>
+
+      <p className="mt-1 text-xs text-gray-900">
+        Loading map experience
+      </p>
+
+    </div>
+
+    {/* overlay must be behind content */}
+    <div className="absolute inset-0 bg-black/5 pointer-events-none" />
+  </div>
+)}
+      {/* REAL MAP */}
+      {loadMap && (
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.7157571881144!2d80.24236865903762!3d13.041099419089221!2m3!1f0!2f0!3f0!m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52665216c0ca29%3A0xcb2c91e781c681d1!2sPebbles%20Serviced%20Apartments!5e0!3m2!1sen!2sin!4v1781359435938!5m2!1sen!2sin"
+          className="w-full h-full"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Pebbles Location"
+        />
+      )}
+    </div>
+  );
+}
 
 export default function Contact() {
   return (
@@ -159,30 +241,21 @@ export default function Contact() {
 </section>
 
       {/* LOCATION */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="text-center mb-12">
-            <p className="text-sm uppercase tracking-[0.2em] text-ink">
-              Location
-            </p>
+<section className="pb-24">
+  <div className="max-w-6xl mx-auto px-8">
+    <div className="text-center mb-12">
+      <p className="text-sm uppercase tracking-[0.2em] text-ink">
+        Location
+      </p>
 
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-ink">
-              Conveniently Located
-            </h2>
-          </div>
+      <h2 className="mt-6 font-serif text-4xl md:text-5xl text-ink">
+        Conveniently Located
+      </h2>
+    </div>
 
-          <div className="overflow-hidden rounded-[32px] h-[420px] md:h-[500px] shadow-[0_18px_60px_rgba(58,58,58,0.08)]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.7157571881144!2d80.24236865903762!3d13.041099419089221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52665216c0ca29%3A0xcb2c91e781c681d1!2sPebbles%20Serviced%20Apartments!5e0!3m2!1sen!2sin!4v1781359435938!5m2!1sen!2sin"
-              className="w-full h-full"
-              style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Pebbles Location"
-            />
-          </div>
-        </div>
-      </section>
+    <MapBlock />
+  </div>
+</section>
 
       {/* FORM */}
       <section className="pb-24">
