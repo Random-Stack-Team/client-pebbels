@@ -176,7 +176,7 @@ export default function Rooms() {
                   </p>
 
                   <div className="flex flex-wrap gap-5 mt-8 text-sm">
-                    <span>{room.size}</span>
+                  
                     <span>{room.bed}</span>
                     <span>{room.guests}</span>
                   </div>
