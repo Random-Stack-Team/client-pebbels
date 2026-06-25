@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import aboutImage from "../assets/Reception.png";
+import aboutImage from "../assets/about.webp";
 import logo from "../assets/logo.png";
-import ourStory from "../assets/hero.png";
+import ourStory from "../assets/Reception.webp";
 
 
 export default function About() {

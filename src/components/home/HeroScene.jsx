@@ -3,11 +3,11 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import roomImage from "../../assets/Room 5.jpg";
-import heroImage from "../../assets/hero2.jpeg";
+import heroImage from "../../assets/hero2.webp";
 
-import welcome1 from "../../assets/Room 5.jpg";
-import welcome2 from "../../assets/Room 5.jpg";
-import welcome3 from "../../assets/Room 5.jpg";
+import welcome1 from "../../assets/Welcome/welcome1.webp";
+import welcome2 from "../../assets/Welcome/welcome_2.webp";
+import welcome3 from "../../assets/Welcome/welcome3.webp";
 import welcome4 from "../../assets/Room 5.jpg";
 
 export default function HeroScene() {
@@ -255,27 +255,34 @@ px-6 md:px-0
             {/* LEFT RAIL */}
             <motion.div
               style={{ y: leftY }}
-              className="hidden lg:flex flex-col gap-40"
+              className="hidden lg:flex flex-col gap-32
+              w-[220px]
+              "
             >
               <img
                 src={welcome1}
                 alt=""
-                className="w-full h-72 object-cover"
+                className="w-full h-80 object-cover"
               />
 
               <img
                 src={welcome2}
                 alt=""
-                className="w-full h-72 object-cover mt-24"
+                className="w-full h-80 object-cover mt-24"
               />
             </motion.div>
 
             {/* CENTER CONTENT */}
-            <div className="max-w-4xl lg:max-w-3xl
-mx-auto
-px-4 md:px-8
-text-center">
-
+<div
+  className="
+    max-w-4xl
+    lg:max-w-xl
+    mx-auto
+    px-4 md:px-8
+    text-center
+    lg:-translate-y-6
+  "
+>
               <p className="text-sm uppercase tracking-[0.2em] text-ink">
                 Welcome to Pebbles
               </p>
@@ -286,7 +293,7 @@ text-center">
                 Comfort and Care
               </h2>
 
-              <div className="max-w-md md:max-w-2xl lg:max-w-lg mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
+              <div className="max-w-md md:max-w-xl lg:max-w-md mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
 
                 <p>
                   Dear Valued Guest,
@@ -326,18 +333,18 @@ text-center">
             {/* RIGHT RAIL */}
             <motion.div
               style={{ y: rightY }}
-              className="hidden lg:flex flex-col gap-40"
+              className="hidden lg:flex flex-col gap-32 w-[220px]"
             >
               <img
                 src={welcome3}
                 alt=""
-                className="w-full h-72 object-cover mt-24"
+                className="w-full h-80 object-cover mt-24"
               />
 
               <img
                 src={welcome4}
                 alt=""
-                className="w-full h-72 object-cover"
+                className="w-full h-80 object-cover"
               />
             </motion.div>
 

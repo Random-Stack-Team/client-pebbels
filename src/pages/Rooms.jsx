@@ -9,7 +9,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import heroRoom from "../assets/Rooms/Hero-section-room.webp";
+import heroRoom from "../assets/Rooms/hero.webp";
 import deluxeRoom from "../assets/Rooms/Deluxe-room.webp";
 import executiveRoom from "../assets/Rooms/Executive-room.webp";
 import suiteRoom from "../assets/Rooms/Suite-room.webp";
@@ -176,7 +176,7 @@ export default function Rooms() {
                   </p>
 
                   <div className="flex flex-wrap gap-5 mt-8 text-sm">
-                  
+                    
                     <span>{room.bed}</span>
                     <span>{room.guests}</span>
                   </div>
