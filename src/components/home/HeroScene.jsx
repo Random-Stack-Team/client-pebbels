@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import roomImage from "../../assets/Room 5.jpg";
 import heroImage from "../../assets/hero2.webp";
 
-import welcome1 from "../../assets/Welcome/welcome1.webp";
-import welcome2 from "../../assets/Welcome/welcome_2.webp";
-import welcome3 from "../../assets/Welcome/welcome3.webp";
-import welcome4 from "../../assets/Room 5.jpg";
+import welcome1 from "../../assets/Welcome/image 2.png";
+import welcome2 from "../../assets/Welcome/image 1.png";
+import welcome3 from "../../assets/Welcome/image 5.png";
+import welcome4 from "../../assets/Welcome/image.png";
 
 export default function HeroScene() {
   const sectionRef = useRef(null);

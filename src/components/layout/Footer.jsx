@@ -14,37 +14,82 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">  
 
           {/* Brand */}
-          <div>
+<div>
+  <h3 className="font-serif text-2xl md:text-3xl">
+    Pebbles
+  </h3>
 
-            <h3 className="font-serif text-2xl md:text-3xl">
-              Pebbles
-            </h3>
+  <p
+    className="
+      mt-4
+      text-[14px]
+      md:text-[15px]
+      leading-6
+      md:leading-7
+      max-w-sm
+    "
+  >
+    A thoughtfully designed serviced apartment
+    offering comfort, convenience, and warm
+    hospitality in Chennai.
+  </p>
 
-            <p
-  className="
-    mt-4
-    text-[14px]
-    md:text-[15px]
-    leading-6
-    md:leading-7
-    max-w-sm
-  "
->
-              A thoughtfully designed serviced apartment
-              offering comfort, convenience, and warm
-              hospitality in Chennai.
-            </p>
+  {/* Premium Map Card */}
+  <div
+    className="
+      relative
+      mt-8
+      w-full
+      max-w-sm
+      h-44
 
-          </div>
+      overflow-hidden
+      rounded-2xl
 
+      border
+      border-white/10
+
+      shadow-[0_16px_40px_rgba(0,0,0,0.18)]
+
+      transition-all
+      duration-500
+
+      hover:scale-[1.02]
+      hover:shadow-[0_22px_50px_rgba(0,0,0,0.22)]
+    "
+  >
+    <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.7157571881144!2d80.24236865903762!3d13.041099419089221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52665216c0ca29%3A0xcb2c91e781c681d1!2sPebbles%20Serviced%20Apartments!5e0!3m2!1sen!2sin!4v1781359435938!5m2!1sen!2sin"
+  className="w-full h-full"
+  style={{ border: 0 }}
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Pebbles Location"
+/>
+
+    
+
+      </div>
+</div>
           {/* Links */}
           <div>
           <h4 className="text-sm uppercase tracking-[0.15em]">
               Navigation
             </h4>
 
-            <div className="mt-6 flex flex-col gap-3">
-
+            <div
+  className="
+    mt-6
+    flex
+    flex-col
+    gap-3
+    text-[14px]
+    md:text-[15px]
+    leading-6
+    md:leading-7
+    text-white/90
+  "
+>
               <Link to="/" className="hover:opacity-70">
                 Home
               </Link>

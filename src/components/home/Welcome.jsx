@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import welcome1 from "../../assets/Room 5.jpg";
-import welcome2 from "../../assets/Room 5.jpg";
-import welcome3 from "../../assets/Room 5.jpg";
-import welcome4 from "../../assets/Room 5.jpg";
+import welcome1 from "../../assets/image 2.png";
+import welcome2 from "../../assets/image 1.png";
+import welcome3 from "../../assets/image 5.png";
+import welcome4 from "../../assets/image.png";
 
 export default function Welcome() {
   const { scrollYProgress } = useScroll();
