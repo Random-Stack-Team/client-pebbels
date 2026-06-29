@@ -277,7 +277,7 @@ px-6 md:px-0
   className="
     max-w-4xl
     lg:max-w-xl
-    mx-auto
+    mx-autog
     px-4 md:px-8
     text-center
     lg:-translate-y-6

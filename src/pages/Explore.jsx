@@ -7,6 +7,7 @@ import EditorialSection from "../components/explore/EditorialSection";
 import marinaImage from "../assets/EXPLORE/marina.webp";
 import templeImage from "../assets/EXPLORE/Kapaleeswarar.jpg";
 import museumImage from "../assets/EXPLORE/museum.jpg";
+import santhomeImage from "../assets/EXPLORE/Santhome_Basilica.jpg";
 
 import tnagarImage from "../assets/EXPLORE/tnagar.jpg";
 import pondyImage from "../assets/EXPLORE/pondybazaar.jpg";
@@ -14,6 +15,9 @@ import expressImage from "../assets/EXPLORE/ea.jpg";
 import nungambakkamImage from "../assets/EXPLORE/nungambakkam.jpg";
 import annaSalaiImage from "../assets/EXPLORE/annasalai.jpg";
 import kodambakkamImage from "../assets/EXPLORE/kodambakkam.jpg";
+import airportImage from "../assets/EXPLORE/chennai-international-airport.webp";
+import metroImage from "../assets/EXPLORE/Chennai-Metro_600.jpg";
+import centralImage from "../assets/EXPLORE/central.jpg";
 
 export default function Explore() {
 
@@ -88,7 +92,7 @@ export default function Explore() {
 <LocationCard
   title="Pondy Bazaar"
   image={pondyImage}
-  distance="6 min Drive"
+  distance="2 min Walk"
   description="A lively mix of retail stores, street shopping, cafés, and local experiences in the heart of Chennai."
   delay={0.15}
 />
@@ -139,6 +143,33 @@ export default function Explore() {
 />
 
 </div>
+<div className="mt-8 grid md:grid-cols-3 gap-8">
+
+  <LocationCard
+    title=" Airport  "
+    image={airportImage}
+    distance="25 min Drive"
+    description="The city's primary international airport offering domestic and global connectivity, conveniently accessible from Pebbles."
+    delay={0}
+  />
+
+  <LocationCard
+    title="T. Nagar Metro"
+    image={metroImage}
+    distance="5 min Drive"
+    description="Quick access to Chennai Metro, making travel across the city convenient for business and leisure guests."
+    delay={0.15}
+  />
+
+  <LocationCard
+    title="Chennai Central"
+    image={centralImage}
+    distance="20 min Drive"
+    description="One of India's busiest railway stations connecting Chennai with major cities across the country."
+    delay={0.3}
+  />
+
+</div>
 
         </div>
        
@@ -183,6 +214,17 @@ export default function Explore() {
   />
 
   <div className="max-w-6xl mx-auto px-8">
+  <div className="border-t border-black/[0.06]" />
+</div>
+
+<EditorialSection
+  title="Santhome Basilica"
+  image={santhomeImage}
+  distance="18 min Away"
+  description="An iconic Neo-Gothic basilica built over the tomb of St. Thomas the Apostle, admired for its striking white architecture, peaceful atmosphere, and rich historical significance."
+/>
+
+<div className="max-w-6xl mx-auto px-8">
   <div className="border-t border-black/[0.06]" />
 </div>
 
