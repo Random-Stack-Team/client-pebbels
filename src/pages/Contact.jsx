@@ -128,113 +128,166 @@ export default function Contact() {
     <div className="grid lg:grid-cols-[1fr_1fr_1fr] gap-8">
 
   {/* CALL */}
-  <motion.div
-    className="
-      rounded-[32px]
-      bg-[#F3EFE7]
-      p-8
+<motion.div
+  className="
+    rounded-[32px]
+    bg-[#F3EFE7]
+    p-8
 
-      border
-      border-black/[0.05]
+    border
+    border-black/[0.05]
 
-      min-h-[220px]
+    min-h-[220px]
 
-      flex
-      flex-col
-      justify-between
-    "
-  >
-    <div>
-      <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
-        Reservations
-      </p>
-
-      <h3 className="mt-4 font-serif text-3xl text-ink">
-        Call Us
-      </h3>
-
-      <p className="mt-3 text-[15px] leading-7 text-ink/70">
-        For bookings and guest assistance.
-      </p>
-    </div>
-
-    <p className="mt-6 text-xl text-ink">
-      044 4356 0001
+    flex
+    flex-col
+    justify-between
+  "
+>
+  <div>
+    <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
+      Reservations
     </p>
-  </motion.div>
+
+    <h3 className="mt-4 font-serif text-3xl text-ink">
+      Call Us
+    </h3>
+
+    <p className="mt-3 text-[15px] leading-7 text-ink/70">
+      For bookings and guest assistance.
+    </p>
+  </div>
+
+  <div className="mt-6 space-y-2">
+    <a
+      href="tel:+914443560001"
+      className="block text-lg text-ink transition-opacity duration-300 hover:opacity-60"
+    >
+      044 4356 0001
+    </a>
+
+    <a
+      href="tel:+914442170001"
+      className="block text-lg text-ink transition-opacity duration-300 hover:opacity-60"
+    >
+      044 4217 0001
+    </a>
+
+    <a
+      href="tel:+914428154000"
+      className="block text-lg text-ink transition-opacity duration-300 hover:opacity-60"
+    >
+      044 2815 4000
+    </a>
+  </div>
+</motion.div>
 
   {/* EMAIL */}
-  <motion.div
+<motion.div
+  className="
+    rounded-[32px]
+    bg-[#F3EFE7]
+    p-8
+
+    border
+    border-black/[0.05]
+
+    min-h-[220px]
+
+    flex
+    flex-col
+    justify-between
+  "
+>
+  <div>
+    <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
+      Email
+    </p>
+
+    <h3 className="mt-4 font-serif text-3xl text-ink">
+      Write to Us
+    </h3>
+
+    <p className="mt-3 text-[15px] leading-7 text-ink/70">
+      Reservations and stay inquiries.
+    </p>
+  </div>
+
+  <a
+    href="mailto:pebbles_chennai@yahoo.com"
     className="
-      rounded-[32px]
-      bg-[#F3EFE7]
-      p-8
+      mt-6
+      block
 
-      border
-      border-black/[0.05]
+      text-lg
+      leading-7
+      text-ink
 
-      min-h-[220px]
+      transition-opacity
+      duration-300
 
-      flex
-      flex-col
-      justify-between
+      hover:opacity-60
     "
   >
-    <div>
-      <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
-        Email
-      </p>
-
-      <h3 className="mt-4 font-serif text-3xl text-ink">
-        Write to Us
-      </h3>
-
-      <p className="mt-3 text-[15px] leading-7 text-ink/70">
-        Reservations and stay inquiries.
-      </p>
-    </div>
-
-    <p className="mt-6 text-lg text-ink break-all">
-      info@pebbles.com
-    </p>
-  </motion.div>
+    pebbles_chennai@yahoo.com
+  </a>
+</motion.div>
 
   {/* LOCATION */}
-  <motion.div
+<motion.div
+  className="
+    rounded-[32px]
+    bg-[#F3EFE7]
+    p-8
+
+    border
+    border-black/[0.05]
+
+    min-h-[220px]
+
+    flex
+    flex-col
+    justify-between
+  "
+>
+  <div>
+    <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
+      Location
+    </p>
+
+    <h3 className="mt-4 font-serif text-3xl text-ink">
+      Visit Us
+    </h3>
+
+    <p className="mt-3 text-[15px] leading-7 text-ink/70">
+      Conveniently located in the heart of Chennai.
+    </p>
+  </div>
+
+  <a
+    href="https://maps.google.com/?q=Pebbles+Serviced+Apartments+7+Lodikhan+Street+Pondy+Bazaar+T+Nagar+Chennai+600017"
+    target="_blank"
+    rel="noopener noreferrer"
     className="
-      rounded-[32px]
-      bg-[#F3EFE7]
-      p-8
+      mt-6
+      block
 
-      border
-      border-black/[0.05]
+      text-lg
+      leading-7
+      text-ink
 
-      min-h-[220px]
+      transition-opacity
+      duration-300
 
-      flex
-      flex-col
-      justify-between
+      hover:opacity-60
     "
   >
-    <div>
-      <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
-        Location
-      </p>
-
-      <h3 className="mt-4 font-serif text-3xl text-ink">
-        Visit Us
-      </h3>
-
-      <p className="mt-3 text-[15px] leading-7 text-ink/70">
-        Conveniently located in Chennai.
-      </p>
-    </div>
-
-    <p className="mt-6 text-lg text-ink">
-      T. Nagar, Chennai
-    </p>
-  </motion.div>
-
+    7, Lodikhan Street<br />
+    Pondy Bazaar,<br />
+    T. Nagar,<br />
+    Chennai – 600 017
+  </a>
+</motion.div>
 </div>
 
   </div>

@@ -4,7 +4,7 @@ import exploreImage from "../assets/EXPLORE/explore.jpg";
 import LocationCard from "../components/explore/LocationCard";
 import EditorialSection from "../components/explore/EditorialSection";
 
-import marinaImage from "../assets/EXPLORE/marina.webp";
+import marinaImage from "../assets/EXPLORE/Marina-beach.webp";
 import templeImage from "../assets/EXPLORE/Kapaleeswarar.jpg";
 import museumImage from "../assets/EXPLORE/museum.jpg";
 import santhomeImage from "../assets/EXPLORE/Santhome_Basilica.jpg";
@@ -154,10 +154,10 @@ export default function Explore() {
   />
 
   <LocationCard
-    title="T. Nagar Metro"
+    title=" Metro"
     image={metroImage}
     distance="5 min Drive"
-    description="Quick access to Chennai Metro, making travel across the city convenient for business and leisure guests."
+    description="Quick access to Thenampettai Metro Station, making travel across Chennai effortless for both business and leisure guests."
     delay={0.15}
   />
 
@@ -218,6 +218,7 @@ export default function Explore() {
 </div>
 
 <EditorialSection
+reverse
   title="Santhome Basilica"
   image={santhomeImage}
   distance="18 min Away"
@@ -229,7 +230,6 @@ export default function Explore() {
 </div>
 
   <EditorialSection
-    reverse
     title="Kapaleeshwarar Temple"
     image={templeImage}
     distance="15 min Away"
@@ -241,6 +241,7 @@ export default function Explore() {
 </div>
 
   <EditorialSection
+  reverse
     title="Government Museum"
     image={museumImage}
     distance="18 min Away"
@@ -275,4 +276,3 @@ export default function Explore() {
     </main>
   );
 }
-

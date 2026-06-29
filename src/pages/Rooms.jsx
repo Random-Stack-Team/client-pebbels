@@ -9,27 +9,29 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import heroRoom from "../assets/Rooms/hero.webp";
-import deluxeRoom from "../assets/Rooms/Deluxe-room.webp";
-import executiveRoom from "../assets/Rooms/Executive-room.webp";
-import suiteRoom from "../assets/Rooms/Suite-room.webp";
+import heroRoom from "../assets/Rooms/Hero_room.webp";
+import deluxeRoom from "../assets/Rooms/Deluxe.webp";
+import executiveRoom from "../assets/Rooms/Executive.webp";
+import suiteRoom from "../assets/Rooms/Suite.webp";
 
-import deluxe1 from "../assets/DELUXE/Deluxe_room.webp";
-import deluxe2 from "../assets/DELUXE/Deluxe room (1).webp";
-import deluxe3 from "../assets/DELUXE/deluxe room (2).webp";
+import deluxe1 from "../assets/DELUXE/Deluxe1.webp";
+import deluxe2 from "../assets/DELUXE/Deluxe2.webp";
 
-import executive1 from "../assets/EXECUTIVE/Executive_room.webp";
-import executive2 from "../assets/EXECUTIVE/Executive_room_2.webp";
+import executive1 from "../assets/EXECUTIVE/Executive1.webp";
+import executive2 from "../assets/EXECUTIVE/Executive2.webp";
+import executive3 from "../assets/EXECUTIVE/Executive3.webp";
+
+
 
 import suite1 from "../assets/SUITE/Suite_room.webp";
 import suite2 from "../assets/SUITE/Suite_room_2.webp";
-import suite3 from "../assets/SUITE/Suite_room_3.webp";
+import suite3 from "../assets/SUITE/Suite2.webp";
 
 const rooms = [
   {
     title: "Deluxe Room",
     image: deluxeRoom,
-    images: [deluxe1, deluxe2, deluxe3],
+    images: [deluxe1, deluxe2 ],
     desc: "A calm and comfortable room designed for short stays and peaceful rest.",
     size: "280 sq. ft.",
     bed: "Queen Bed",
@@ -38,7 +40,7 @@ const rooms = [
   {
     title: "Executive Room",
     image: executiveRoom,
-    images: [executive1, executive2],
+    images: [executive1, executive2,executive3],
     desc: "A refined space with extra comfort for business travelers and longer visits.",
     size: "360 sq. ft.",
     bed: "King Bed",

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 import {
   Camera,
   MessageCircle,
@@ -15,24 +16,7 @@ export default function Footer() {
 
           {/* Brand */}
 <div>
-  <h3 className="font-serif text-2xl md:text-3xl">
-    Pebbles
-  </h3>
-
-  <p
-    className="
-      mt-4
-      text-[14px]
-      md:text-[15px]
-      leading-6
-      md:leading-7
-      max-w-sm
-    "
-  >
-    A thoughtfully designed serviced apartment
-    offering comfort, convenience, and warm
-    hospitality in Chennai.
-  </p>
+  
 
   {/* Premium Map Card */}
   <div
@@ -134,12 +118,23 @@ export default function Footer() {
     </p>
 
     <p>
-       044 4356 0001
+       Tel : 044-4356 0001 / 4217 0001 / 2815 4000
 
     </p>
 
     <p>
-      info@pebbles.com
+      <a
+        href="mailto:pebbles_chennai@yahoo.com?subject=Room%20Enquiry"
+        className="
+          transition-colors
+          duration-300
+          hover:text-white
+          hover:underline
+          underline-offset-4
+        "
+      >
+        pebbles_chennai@yahoo.com
+      </a>
     </p>
   </div>
 
@@ -210,7 +205,7 @@ hover:shadow-[0_12px_30px_rgba(250,247,242,0.15)]
 
     {/* WhatsApp */}
     <a
-      href="#"
+      href="https://wa.me/919962414285?text=Hello%20Pebbles,%20I'd%20like%20to%20enquire%20about%20room%20availability."
       className="
         group
         relative
