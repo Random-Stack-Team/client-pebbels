@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import {
+  PhoneCall,
+  Mail,
+  MapPinned,
+} from "lucide-react";
+
 function MapBlock() {
   const [loadMap, setLoadMap] = useState(false);
   const ref = useRef(null);
@@ -130,6 +136,7 @@ export default function Contact() {
   {/* CALL */}
 <motion.div
   className="
+  relative
     rounded-[32px]
     bg-[#F3EFE7]
     p-8
@@ -144,6 +151,27 @@ export default function Contact() {
     justify-between
   "
 >
+
+  <div
+  className="
+absolute top-8 right-8
+w-14 h-14
+rounded-2xl
+bg-white/60
+backdrop-blur-md
+border border-white/40
+flex items-center justify-center
+shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+"
+>
+  <PhoneCall
+    size={22}
+    strokeWidth={1.75}
+    className="text-[#3A3A3A]"
+  />
+</div>
+
+
   <div>
     <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
       Reservations
@@ -179,12 +207,19 @@ export default function Contact() {
     >
       044 2815 4000
     </a>
+    <a
+      href="tel:+914428154000"
+      className="block text-lg text-ink transition-opacity duration-300 hover:opacity-60"
+    >
+      9962414285
+    </a>
   </div>
 </motion.div>
 
   {/* EMAIL */}
 <motion.div
   className="
+  relative
     rounded-[32px]
     bg-[#F3EFE7]
     p-8
@@ -199,10 +234,43 @@ export default function Contact() {
     justify-between
   "
 >
+
+  <div
+  className="
+    absolute
+    top-8
+    right-8
+
+    w-14
+    h-14
+
+    rounded-2xl
+
+    bg-white/60
+    backdrop-blur-md
+
+    border
+    border-white/40
+
+    flex
+    items-center
+    justify-center
+
+    shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+  "
+>
+  <Mail
+    size={22}
+    strokeWidth={1.75}
+    className="text-[#3A3A3A]"
+  />
+</div>
+
   <div>
     <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
       Email
     </p>
+
 
     <h3 className="mt-4 font-serif text-3xl text-ink">
       Write to Us
@@ -236,6 +304,7 @@ export default function Contact() {
   {/* LOCATION */}
 <motion.div
   className="
+  relative
     rounded-[32px]
     bg-[#F3EFE7]
     p-8
@@ -250,6 +319,38 @@ export default function Contact() {
     justify-between
   "
 >
+
+  <div
+  className="
+    absolute
+    top-8
+    right-8
+
+    w-14
+    h-14
+
+    rounded-2xl
+
+    bg-white/60
+    backdrop-blur-md
+
+    border
+    border-white/40
+
+    flex
+    items-center
+    justify-center
+
+    shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+  "
+>
+  <MapPinned
+    size={22}
+    strokeWidth={1.75}
+    className="text-[#3A3A3A]"
+  />
+</div>
+
   <div>
     <p className="text-xs uppercase tracking-[0.2em] text-ink/50">
       Location
