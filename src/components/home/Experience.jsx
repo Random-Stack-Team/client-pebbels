@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import experienceImage from "../../assets/experience.webp";
+import experienceImage from "../../assets/Experience-new.webp";
 
 export default function Experience() {
   return (

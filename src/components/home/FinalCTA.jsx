@@ -223,10 +223,11 @@ md:max-w-2xl
             <motion.div
   whileHover={{ scale: 1.03 }}
   whileTap={{ scale: 0.97 }}
+  className="mt-10"
 >
   <Link
     to="/book"
-    className="inline-block px-8 py-4 rounded-xl bg-[#3A3A3A] text-[#FAF7F2]"
+    className="inline-block px-8 py-4 rounded-xl bg-[#FAF7F2] text-[#3A3A3A]"
   >
     Book Your Stay
   </Link>
