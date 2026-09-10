@@ -9,6 +9,8 @@ import Rooms from "./pages/Rooms";
 import Explore from "./pages/Explore";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
+import Book from "./pages/Book";
+
 
 export default function App() {
   return (
@@ -22,6 +24,7 @@ export default function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/book" element={<Book />} />
       </Routes>
     </Layout>
   );

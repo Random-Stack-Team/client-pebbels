@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import aboutImage from "../assets/Reception.png";
+import aboutImage from "../assets/about.webp";
 import logo from "../assets/logo.png";
-import ourStory from "../assets/hero.png";
+import ourStory from "../assets/Reception.webp";
 
 
 export default function About() {
@@ -29,11 +29,10 @@ export default function About() {
         transition={{ delay: 0.15, duration: 1 }}
         className="font-serif text-[64px] md:text-[130px] leading-[0.9] text-ink"
       >
-        Comfort
+        Affordable 
         <br />
-        Convenience
-        <br />
-        Care.
+        luxury.
+        
       </motion.h1>
 
       <motion.div
@@ -107,7 +106,7 @@ export default function About() {
 
         <div className="mt-12 space-y-8 text-lg leading-[1.9] max-w-3xl">
           <p>
-            Pebbles was established with a simple vision — to provide
+            Pebbles was established with a simple vision - to provide
             travelers with the comfort of home combined with the
             reliability of professional hospitality.
           </p>
