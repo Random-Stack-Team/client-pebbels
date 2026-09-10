@@ -9,8 +9,15 @@ import Rooms from "./pages/Rooms";
 import Explore from "./pages/Explore";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
+import Maintenance from "./pages/Maintenance";
+
+const MAINTENANCE_MODE = true;
 
 export default function App() {
+  if (MAINTENANCE_MODE) {
+    return <Maintenance />;
+  }
+
   return (
     <Layout>
       <ScrollToTop />
@@ -22,6 +29,7 @@ export default function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Maintenance />} />
       </Routes>
     </Layout>
   );
