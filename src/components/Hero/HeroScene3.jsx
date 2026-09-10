@@ -2,6 +2,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
+
+import RailLayer from "./RailLayer";
+
 import roomImage from "../../assets/Room 5.jpg";
 import heroImage from "../../assets/hero2.webp";
 
@@ -10,7 +13,7 @@ import welcome2 from "../../assets/Welcome/image 1.png";
 import welcome3 from "../../assets/Welcome/image 5.png";
 import welcome4 from "../../assets/Welcome/image.png";
 
-export default function HeroScene() {
+export default function HeroScene3() {
   const sectionRef = useRef(null);
 
 
@@ -66,18 +69,7 @@ const heroOpacity = useTransform(
   [1, 0.8, 0]
 );
   
-  // Rails start AFTER Welcome takeover
-  const leftY = useTransform(
-    scrollYProgress,
-    [0.22, 1],
-    [850, -200]
-  );
 
-  const rightY = useTransform(
-    scrollYProgress,
-    [0.22, 1],
-    [1050, -300]
-  );
 
 
   return (
@@ -85,8 +77,7 @@ const heroOpacity = useTransform(
   ref={sectionRef}
   className="
     relative
-    h-[180vh]
-    md:h-[220vh]
+    h-[140vh]
     lg:h-[320vh]
   "
 >
@@ -224,133 +215,94 @@ px-6 md:px-0
   </motion.div>
 
   {/* WELCOME PANEL */}
-  <motion.div
-    style={{
-      y: welcomeY,
-      backgroundColor: "#F5F1E8",
-    }}
-    className="
-      absolute
-      inset-0
-      z-[999]
-
-      overflow-hidden
-
-      border-t
-      border-black/[0.03]
-
-      shadow-[0_-60px_120px_rgba(0,0,0,0.08)]
-    "
-  >
-          <div className="
-  max-w-7xl
-  mx-auto
-  px-6 md:px-10 lg:px-16
-  h-full
-  grid
-  lg:grid-cols-[220px_1fr_220px]
-  gap-16
-  items-center
-">
-            {/* LEFT RAIL */}
-            <motion.div
-              style={{ y: leftY }}
-              className="hidden lg:flex flex-col gap-32
-              w-[220px]
-              "
-            >
-              <img
-                src={welcome1}
-                alt=""
-                className="w-full h-80 object-cover"
-              />
-
-              <img
-                src={welcome2}
-                alt=""
-                className="w-full h-80 object-cover mt-24"
-              />
-            </motion.div>
-
-            {/* CENTER CONTENT */}
-<div
+<motion.div
+  style={{
+    y: welcomeY,
+    backgroundColor: "#F5F1E8",
+  }}
   className="
-    max-w-4xl
-    lg:max-w-xl
-    mx-autog
-    px-4 md:px-8
-    text-center
-    lg:-translate-y-6
+    absolute
+    inset-0
+    z-[999]
+    overflow-hidden
+    border-t
+    border-black/[0.03]
+    shadow-[0_-60px_120px_rgba(0,0,0,0.08)]
   "
 >
-              <p className="text-sm uppercase tracking-[0.2em] text-ink">
-                Welcome to Pebbles
-              </p>
+  <div
+    className="
+      max-w-7xl
+      mx-auto
+      px-6 md:px-10 lg:px-16
+      h-full
+      grid
+      lg:grid-cols-[220px_1fr_220px]
+      gap-16
+      items-center
+    "
+  >
+    {/* Empty left column */}
+    <div />
 
-              <h2 className="mt-6 font-serif text-3xl sm:text-4xl md:text-6xl leading-tight text-ink">
-                A Stay Designed Around
-                <br />
-                Comfort and Care
-              </h2>
+    {/* CENTER CONTENT */}
+    <div
+      className="
+        max-w-4xl
+        lg:max-w-xl
+        mx-auto
+        px-4 md:px-8
+        text-center
+        lg:-translate-y-6
+      "
+    >
+      <p className="text-sm uppercase tracking-[0.2em] text-ink">
+        Welcome to Pebbles
+      </p>
 
-              <div className="max-w-md md:max-w-xl lg:max-w-md mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
+      <h2 className="mt-6 font-serif text-3xl sm:text-4xl md:text-6xl leading-tight text-ink">
+        A Stay Designed Around
+        <br />
+        Comfort and Care
+      </h2>
 
-                <p>
-                  Dear Valued Guest,
-                </p>
+      <div className="max-w-md md:max-w-xl lg:max-w-md mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
+        <p>Dear Valued Guest,</p>
 
-                <p>
-                  Welcome to Pebbles, a thoughtfully designed
-                  serviced apartment in the heart of Chennai.
-                </p>
+        <p>
+          Welcome to Pebbles, a thoughtfully designed serviced apartment in the
+          heart of Chennai.
+        </p>
 
-                <p>
-                  We offer the comfort of home combined with
-                  warm hospitality and attentive service.
-                </p>
+        <p>
+          We offer the comfort of home combined with warm hospitality and
+          attentive service.
+        </p>
 
-                <p>
-                  Whether your stay is short or extended,
-                  every detail is crafted for comfort and ease.
-                </p>
+        <p>
+          Whether your stay is short or extended, every detail is crafted for
+          comfort and ease.
+        </p>
 
-                <div className="pt-4">
+        <div className="pt-4">
+          <p className="font-medium">Warm regards,</p>
+          <p className="mt-1">The Pebbles Team</p>
+        </div>
+      </div>
+    </div>
 
-                  <p className="font-medium">
-                    Warm regards,
-                  </p>
+    {/* Empty right column */}
+    <div />
+  </div>
+</motion.div>
 
-                  <p className="mt-1">
-                    The Pebbles Team
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* RIGHT RAIL */}
-            <motion.div
-              style={{ y: rightY }}
-              className="hidden lg:flex flex-col gap-32 w-[220px]"
-            >
-              <img
-                src={welcome3}
-                alt=""
-                className="w-full h-80 object-cover mt-24"
-              />
-
-              <img
-                src={welcome4}
-                alt=""
-                className="w-full h-80 object-cover"
-              />
-            </motion.div>
-
-          </div>
-        </motion.div>
-
+<RailLayer
+  progress={scrollYProgress}
+  welcome1={welcome1}
+  welcome2={welcome2}
+  welcome3={welcome3}
+  welcome4={welcome4}
+/>
       </div>
     </section>
   );

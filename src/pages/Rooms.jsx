@@ -3,33 +3,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   CarFront,
   Wifi,
-  BatteryCharging,
+  AirVent,
   Droplets,
   Sofa,
   ShieldCheck,
 } from "lucide-react";
 
-import heroRoom from "../assets/Rooms/Hero-section-room.webp";
-import deluxeRoom from "../assets/Rooms/Deluxe-room.webp";
-import executiveRoom from "../assets/Rooms/Executive-room.webp";
-import suiteRoom from "../assets/Rooms/Suite-room.webp";
+import heroRoom from "../assets/Rooms/Hero_room.webp";
+import deluxeRoom from "../assets/Rooms/Deluxe.webp";
+import executiveRoom from "../assets/Rooms/Executive.webp";
+import suiteRoom from "../assets/Rooms/Suite.webp";
 
-import deluxe1 from "../assets/DELUXE/Deluxe_room.webp";
-import deluxe2 from "../assets/DELUXE/Deluxe room (1).webp";
-import deluxe3 from "../assets/DELUXE/deluxe room (2).webp";
+import deluxe1 from "../assets/DELUXE/Deluxe1.webp";
+import deluxe2 from "../assets/DELUXE/Deluxe2.webp";
 
-import executive1 from "../assets/EXECUTIVE/Executive_room.webp";
-import executive2 from "../assets/EXECUTIVE/Executive_room_2.webp";
+import executive1 from "../assets/EXECUTIVE/Executive1.webp";
+import executive2 from "../assets/EXECUTIVE/Executive2.webp";
+import executive3 from "../assets/EXECUTIVE/Executive3.webp";
+
+
 
 import suite1 from "../assets/SUITE/Suite_room.webp";
 import suite2 from "../assets/SUITE/Suite_room_2.webp";
-import suite3 from "../assets/SUITE/Suite_room_3.webp";
+import suite3 from "../assets/SUITE/Suite2.webp";
 
 const rooms = [
   {
     title: "Deluxe Room",
     image: deluxeRoom,
-    images: [deluxe1, deluxe2, deluxe3],
+    images: [deluxe1, deluxe2 ],
     desc: "A calm and comfortable room designed for short stays and peaceful rest.",
     size: "280 sq. ft.",
     bed: "Queen Bed",
@@ -38,7 +40,7 @@ const rooms = [
   {
     title: "Executive Room",
     image: executiveRoom,
-    images: [executive1, executive2],
+    images: [executive1, executive2,executive3],
     desc: "A refined space with extra comfort for business travelers and longer visits.",
     size: "360 sq. ft.",
     bed: "King Bed",
@@ -176,7 +178,7 @@ export default function Rooms() {
                   </p>
 
                   <div className="flex flex-wrap gap-5 mt-8 text-sm">
-                    <span>{room.size}</span>
+                    
                     <span>{room.bed}</span>
                     <span>{room.guests}</span>
                   </div>
@@ -227,10 +229,10 @@ export default function Rooms() {
                 "High-speed internet access available throughout your stay.",
               ],
               [
-                BatteryCharging,
-                "24 hrs Power Backup Facility including A/C",
-                "Reliable power backup support including air conditioning.",
-              ],
+  AirVent,
+  "Uninterrupted Air Conditioning",
+  "Ensuring continuous air-conditioned comfort, even during power interruptions.",
+],
               [
                 Droplets,
                 "24 hrs Purified Water Supply",
@@ -326,29 +328,70 @@ export default function Rooms() {
       <AnimatePresence>
         {selectedFacility && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center px-6"
-          >
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  className="
+    fixed
+    inset-0
+    z-[9999]
+
+    bg-black/85
+    backdrop-blur-sm
+
+    flex
+    items-center
+    justify-center
+
+    px-6
+  "
+>
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 40, scale: 0.95 }}
-              className="bg-background text-ink max-w-md w-full rounded-[28px] p-6 md:p-8"
-            >
+  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  exit={{ opacity: 0, y: 40, scale: 0.95 }}
+  className="
+    relative
+
+    w-full
+    max-w-lg
+
+    rounded-[32px]
+
+    bg-[#F3EFE7]
+
+    p-8 md:p-10
+
+    border
+    border-black/[0.06]
+
+    shadow-[0_35px_90px_rgba(0,0,0,0.30)]
+  "
+>
               <button
                 onClick={() => setSelectedFacility(null)}
-                className="float-right text-3xl"
+                className="
+    absolute
+    top-6
+    right-6
+
+    text-3xl
+
+    text-[#3A3A3A]/50
+
+    hover:text-[#3A3A3A]
+
+    transition-colors
+  "
               >
                 ×
               </button>
 
-              <h3 className="font-serif text-3xl md:text-4xl mt-8">
+              <h3 className="mt-8 font-serif text-4xl leading-tight text-[#3A3A3A]">
                 {selectedFacility.title}
               </h3>
 
-              <p className="mt-5 text-[15px] leading-7 text-ink/70">
+              <p className="mt-5 text-[15px] leading-7 text-ink">
                 {selectedFacility.desc}
               </p>
             </motion.div>

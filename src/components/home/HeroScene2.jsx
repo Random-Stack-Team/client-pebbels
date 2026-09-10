@@ -1,6 +1,12 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+
+import RevealImage from "./RevealImage";
 
 import roomImage from "../../assets/Room 5.jpg";
 import heroImage from "../../assets/hero2.webp";
@@ -10,7 +16,9 @@ import welcome2 from "../../assets/Welcome/image 1.png";
 import welcome3 from "../../assets/Welcome/image 5.png";
 import welcome4 from "../../assets/Welcome/image.png";
 
-export default function HeroScene() {
+
+
+export default function HeroScene2() {
   const sectionRef = useRef(null);
 
 
@@ -19,6 +27,11 @@ export default function HeroScene() {
     offset: ["start start", "end end"],
   });
 
+// Timeline constants
+const WELCOME_LOCK = 0.64;
+const RAIL_START = WELCOME_LOCK + 0.04;
+const IMAGE_START = WELCOME_LOCK + 0.06;
+  
 //Hero image Parallax
   const heroImageY = useTransform(
   scrollYProgress,
@@ -68,16 +81,26 @@ const heroOpacity = useTransform(
   
   // Rails start AFTER Welcome takeover
   const leftY = useTransform(
-    scrollYProgress,
-    [0.22, 1],
-    [850, -200]
-  );
+  scrollYProgress,
+  [0.00, 0.60, 0.66, 1],
+  [
+    "120vh", // Hidden below
+    "120vh", // Stay hidden while welcome animates
+    "0px",   // Fast entrance
+    "-150px" // Slow editorial parallax
+  ]
+);
 
-  const rightY = useTransform(
-    scrollYProgress,
-    [0.22, 1],
-    [1050, -300]
-  );
+const rightY = useTransform(
+  scrollYProgress,
+  [0.00, 0.60, 0.66, 1],
+  [
+    "-120vh", // Hidden above
+    "-120vh",
+    "0px",
+    "-250px"
+  ]
+);
 
 
   return (
@@ -201,25 +224,27 @@ px-6 md:px-0
         designed stays in the heart of Chennai.
       </p>
 
-      <Link to="/book">
-  <button
-    className="
-      mt-10
-      px-6 md:px-8
-      py-3 md:py-4
-      rounded-xl
-      bg-[#FAF7F2]
-      text-[#3A3A3A]
-      text-sm
-      font-medium
-      transition-all
-      duration-300
-      hover:scale-[1.02]
-    "
-  >
-    Book Your Stay
-  </button>
-</Link>
+      <button
+        className="
+          mt-10
+          px-6 md:px-8
+py-3 md:py-4
+          rounded-xl
+
+          bg-[#FAF7F2]
+          text-[#3A3A3A]
+
+          text-sm
+          font-medium
+
+          transition-all
+          duration-300
+
+          hover:scale-[1.02]
+        "
+      >
+        Book Your Stay
+      </button>
     </motion.div>
   </motion.div>
 
@@ -253,36 +278,36 @@ px-6 md:px-0
   items-center
 ">
             {/* LEFT RAIL */}
-            <motion.div
-              style={{ y: leftY }}
-              className="hidden lg:flex flex-col gap-32
-              w-[220px]
-              "
-            >
-              <img
-                src={welcome1}
-                alt=""
-                className="w-full h-80 object-cover"
-              />
+            
+              <motion.div
+  style={{ y: leftY }}
+  className="hidden lg:flex flex-col gap-40"
+>
+  <div className="overflow-hidden h-72">
+    <RevealImage
+  src={welcome1}
+  progress={scrollYProgress}
+  start={0.60}
+  end={0.66}
+/>
+  </div>
 
-              <img
-                src={welcome2}
-                alt=""
-                className="w-full h-80 object-cover mt-24"
-              />
-            </motion.div>
+  <div className="overflow-hidden h-72 mt-24">
+    <RevealImage
+  src={welcome2}
+  progress={scrollYProgress}
+  start={0.60}
+  end={0.66}
+/>
+  </div>
+</motion.div>
 
             {/* CENTER CONTENT */}
-<div
-  className="
-    max-w-4xl
-    lg:max-w-xl
-    mx-autog
-    px-4 md:px-8
-    text-center
-    lg:-translate-y-6
-  "
->
+            <div className="max-w-4xl lg:max-w-3xl
+mx-auto
+px-4 md:px-8
+text-center">
+
               <p className="text-sm uppercase tracking-[0.2em] text-ink">
                 Welcome to Pebbles
               </p>
@@ -293,7 +318,7 @@ px-6 md:px-0
                 Comfort and Care
               </h2>
 
-              <div className="max-w-md md:max-w-xl lg:max-w-md mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
+              <div className="max-w-md md:max-w-2xl lg:max-w-lg mx-auto mt-6 space-y-3 text-[15px] leading-7 text-center text-ink">
 
                 <p>
                   Dear Valued Guest,
@@ -330,23 +355,30 @@ px-6 md:px-0
 
             </div>
 
+            
             {/* RIGHT RAIL */}
-            <motion.div
-              style={{ y: rightY }}
-              className="hidden lg:flex flex-col gap-32 w-[220px]"
-            >
-              <img
-                src={welcome3}
-                alt=""
-                className="w-full h-80 object-cover mt-24"
-              />
+<motion.div
+  style={{ y: rightY }}
+  className="hidden lg:flex flex-col gap-40"
+>
+  <div className="overflow-hidden h-72 mt-24">
+    <RevealImage
+  src={welcome3}
+  progress={scrollYProgress}
+  start={0.60}
+  end={0.66}
+/>
+  </div>
 
-              <img
-                src={welcome4}
-                alt=""
-                className="w-full h-80 object-cover"
-              />
-            </motion.div>
+  <div className="overflow-hidden h-72">
+    <RevealImage
+  src={welcome4}
+  progress={scrollYProgress}
+  start={0.60}
+  end={0.66}
+/>
+  </div>
+</motion.div>
 
           </div>
         </motion.div>
