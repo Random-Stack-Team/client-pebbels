@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import Book from "./pages/Book";
 import Maintenance from "./pages/Maintenance";
 
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 
 export default function App() {
   if (MAINTENANCE_MODE) {
